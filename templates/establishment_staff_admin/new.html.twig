@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Establishment{% endblock %}
+
+{% block body %}
+    <h1>Create new Establishment</h1>
+
+    {{ include('establishment_staff_admin/_form.html.twig') }}
+
+    <a href="{{ path('establishment_staff_admin_index') }}">back to list</a>
+{% endblock %}

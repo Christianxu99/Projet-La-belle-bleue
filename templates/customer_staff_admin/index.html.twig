@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Customer index{% endblock %}
+
+{% block body %}
+    <h1>Customer index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id_customer</th>
+                <th>Customer_type</th>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th>City</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.id }}</td>
+                <td>{{ customer.idCustomer }}</td>
+                <td>{{ customer.customerType }}</td>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.photo }}</td>
+                <td>{{ customer.phone }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.zipcode }}</td>
+                <td>{{ customer.city }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.password }}</td>
+                <td>
+                    <a href="{{ path('customer_staff_admin_show', {'id': customer.id}) }}">show</a>
+                    <a href="{{ path('customer_staff_admin_edit', {'id': customer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('customer_staff_admin_new') }}">Create new</a>
+{% endblock %}

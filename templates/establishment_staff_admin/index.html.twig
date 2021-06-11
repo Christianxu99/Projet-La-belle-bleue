@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Establishment index{% endblock %}
+
+{% block body %}
+    <h1>Establishment index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Id_customer</th>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Price_range</th>
+                <th>Id_product</th>
+                <th>Facebook</th>
+                <th>Instagram</th>
+                <th>Twitter</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for establishment in establishments %}
+            <tr>
+                <td>{{ establishment.id }}</td>
+                <td>{{ establishment.idCustomer }}</td>
+                <td>{{ establishment.type }}</td>
+                <td>{{ establishment.description }}</td>
+                <td>{{ establishment.priceRange }}</td>
+                <td>{{ establishment.idProduct }}</td>
+                <td>{{ establishment.facebook }}</td>
+                <td>{{ establishment.instagram }}</td>
+                <td>{{ establishment.twitter }}</td>
+                <td>
+                    <a href="{{ path('establishment_staff_admin_show', {'id': establishment.id}) }}">show</a>
+                    <a href="{{ path('establishment_staff_admin_edit', {'id': establishment.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('establishment_staff_admin_new') }}">Create new</a>
+{% endblock %}

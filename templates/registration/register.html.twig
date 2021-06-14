@@ -7,8 +7,66 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
 
+    <h1> *** INSCRIPTION FORMULAIRE *** </h1>
+
+    <hr>
+    1 page TWIG avec :
+
+
+    <p> - bouton particulier </p>
+    <p> - bouton professionnel </p>
+    <p> - Avez-vous déjà un compte </p>
+
+    <hr>
+    <br>
+
+    <h3> /// Prévoir du JS avec add event listenner /// Redirection vers les particuliers </h3>
+
+    <p> 1 page TWIG ? avec le formulaire (pseudo / adresse / confirmation email / mot de passe / confirmation mot de passe) </p>
+
+    <p> - sélection veggie vegan etc </p>
+    <p> - bouton s'inscrire </p>
+    <p> - Avez-vous déjà un compte </p>
+
+     
+   
+
+    <br>
+    <hr>
+    <br>
+
+    <h3> /// Prévoir du JS avec add event listenner /// Redirection vers les professionnels  </h3>
+
+    <p> - 1 page TWIG ? avec le formulaire (pseudo / adresse / confirmation email / mot de passe / confirmation mot de passe) </p>
+    <p> - bouton s'inscrire </p>
+    <p> - Avez-vous déjà un compte </p>
+
+    <p>   Page merci   </p>
+
+    <br>
+    <hr>
+    <br>
+
+    <p>  prévoir JS pour l'animation des 4 étapes de l'inscription </p>
+
+    <ul>
+        <li> Votre entreprise  </li>
+        <li> Votre établissement, Vos spécialités, vos choix, vos horaires</li>
+        <li> Votre présence en ligne </li>
+        <li> Félicitations </li>
+    </ul>
+
+
+    <br>
+    <hr>
+    <br>
+
+
+
+
+    <h3> FORMULAIRE </h3>
+    
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -18,4 +76,8 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+
+
+
+
 {% endblock %}

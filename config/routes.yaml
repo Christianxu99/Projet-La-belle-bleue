@@ -1,20 +1,33 @@
-index:
-  path: /index
-  controller: App\Controller\HomeController::index
 
+AboutController:
+  path: /connexion
+  controller: App\Controller\AboutController::connexion
 
-login:
-  path: /login
-  controller: App\Controller\LoginController::login
-
-RegistrationController:
-  path: /register
-  controller: App\Controller\RegistrationController::register
+CommentController:
+  path: /comment
+  controller: App\Controller\CommentController::comment
 
 DashboardController:
   path: /admin
   controller: App\Controller\Admin\DashboardController::admin
 
+EditController:
+  path: /edit
+  controller: App\Controller\EditController::edit
+
+Index:
+  path: /
+  controller: App\Controller\HomeController::index
+
+Login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+Profile:
+  path: /profile
+  controller: App\Controller\ProfileController::profile
 
 
-  
+RegistrationController:
+  path: /register
+  controller: App\Controller\RegistrationController::register

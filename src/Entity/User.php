@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -47,6 +49,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $user_type;
+
+    /**
+     * @ORM\OneToMany(targetEntity=establishment::class, mappedBy="id_pro")
+     */
+    private $id_pro;
+
+    public function __construct()
+    {
+        $this->id_pro = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -154,6 +181,72 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getUserType(): ?string
+    {
+        return $this->user_type;
+    }
+
+    public function setUserType(string $user_type): self
+    {
+        $this->user_type = $user_type;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|establishment[]
+     */
+    public function getIdPro(): Collection
+    {
+        return $this->id_pro;
+    }
+
+    public function addIdPro(establishment $idPro): self
+    {
+        if (!$this->id_pro->contains($idPro)) {
+            $this->id_pro[] = $idPro;
+            $idPro->setIdPro($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdPro(establishment $idPro): self
+    {
+        if ($this->id_pro->removeElement($idPro)) {
+            // set the owning side to null (unless already changed)
+            if ($idPro->getIdPro() === $this) {
+                $idPro->setIdPro(null);
+            }
+        }
 
         return $this;
     }

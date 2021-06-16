@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}LaBelleBleue{% endblock %}
+
 
 {% block body %}
 <style>
@@ -9,7 +10,11 @@
 </style>
 
 <div class="example-wrapper">
+
     <h1> *** HOME PAGE *** </h1>
+
+	 <span>Bonjour</span> {{app.user.name}}
+	
 
     <br>
     <hr>
@@ -63,6 +68,7 @@
 					navigationControl: true, 
 					navigationControlOptions: {
 						// Comment ces options doivent-elles s'afficher
+
 						style: google.maps.NavigationControlStyle.ZOOM_PAN 
 					}
 				});

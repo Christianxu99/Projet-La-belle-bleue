@@ -14,14 +14,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class DashboardController extends AbstractDashboardController
 {
 
-
     
-
     /**
+     * 
      * @Route("/admin", name="admin")
+     * 
      */
     public function index(): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return parent::index();
     }
 
@@ -37,4 +38,11 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Establishment', 'fas fa-list', Establishment::class);
         yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
     }
+
+
+    
+ 
+
+
+
 }

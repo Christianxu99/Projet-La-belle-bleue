@@ -20,9 +20,10 @@ class Establishment
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
-    private $id_customer;
+    private $name;
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -35,14 +36,16 @@ class Establishment
     private $description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
     private $price_range;
 
-    /**
-     * @ORM\Column(type="integer")
+
+     /**
+     * @ORM\Column(type="text")
      */
-    private $id_product;
+    private $address;
+
 
         /**
      * @ORM\Column(type="text", nullable=true)
@@ -86,11 +89,6 @@ class Establishment
     private $photo;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $address;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $zipcode;
@@ -105,10 +103,6 @@ class Establishment
      */
     private $phone;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -138,17 +132,18 @@ class Establishment
         return $this->id;
     }
 
-    public function getIdCustomer(): ?int
+    public function getName(): ?string
     {
-        return $this->id_customer;
+        return $this->name;
     }
 
-    public function setIdCustomer(int $id_customer): self
+    public function setName(string $name): self
     {
-        $this->id_customer = $id_customer;
+        $this->name = $name;
 
         return $this;
     }
+
 
     public function getType(): ?string
     {
@@ -174,26 +169,26 @@ class Establishment
         return $this;
     }
 
-    public function getPriceRange(): ?int
+    public function getPriceRange(): ?string
     {
         return $this->price_range;
     }
 
-    public function setPriceRange(int $price_range): self
+    public function setPriceRange(string $price_range): self
     {
         $this->price_range = $price_range;
 
         return $this;
     }
 
-    public function getIdProduct(): ?int
+    public function getAddress(): ?string
     {
-        return $this->id_product;
+        return $this->address;
     }
 
-    public function setIdProduct(int $id_product): self
+    public function setAddress(string $address): self
     {
-        $this->id_product = $id_product;
+        $this->address = $address;
 
         return $this;
     }
@@ -363,17 +358,6 @@ class Establishment
         return $this;
     }
 
-    public function getAddress(): ?string
-    {
-        return $this->address;
-    }
-
-    public function setAddress(string $address): self
-    {
-        $this->address = $address;
-
-        return $this;
-    }
 
     public function getZipcode(): ?string
     {
@@ -411,17 +395,7 @@ class Establishment
         return $this;
     }
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
+  
 
     public function getEmail(): ?string
     {

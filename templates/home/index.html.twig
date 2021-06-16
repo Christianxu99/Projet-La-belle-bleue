@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}LaBelleBleue{% endblock %}
+
 
 {% block body %}
 <style>
@@ -9,7 +10,38 @@
 </style>
 
 <div class="example-wrapper">
-    <h1> *** HOME PAGE *** </h1>
+
+    <h1> LaBelle Bleue</h1>
+	<nav class="log-nav">
+
+
+	            <span>
+                    <a href="{{ path("Index") }}">Accueil</a>
+                </span>
+            {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
+            {% if is_granted("ROLE_USER") %}
+    {#            1/ si l'utilisateur est connecté et a bien rentré sont login + mot de passe, #}
+    {#            il a automatiquement au moins le role "ROLE_USER", et voit donc un #}
+    {#            "bonjour" suivi de son prénom, ainsi qu'un lien pour se déconnecter #}
+                <span>
+                    Bonjour {{ app.user.name }} !
+                </span>
+                <a href="{{ path("Profile") }}">Mon profile</a>
+                 <a href="{{ path("app_logout") }}">Se déconnecter</a> 
+            {% else %}
+    {#            Sinon, l'utilisateur n'est pas connecté, et on affiche un lien vers le formulaire de login #}
+    {#            et un autre vers la page de création de compte #}
+                <span>
+                    <a href="{{ path("RegistrationController") }}">Créer un compte</a>
+                </span>
+                <span>
+                    <a href="{{ path("Login") }}">Se connecter</a>
+                </span>
+            {% endif %}
+
+        </nav>
+
+	
 
     <br>
     <hr>
@@ -63,6 +95,7 @@
 					navigationControl: true, 
 					navigationControlOptions: {
 						// Comment ces options doivent-elles s'afficher
+
 						style: google.maps.NavigationControlStyle.ZOOM_PAN 
 					}
 				});

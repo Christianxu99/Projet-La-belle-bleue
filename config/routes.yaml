@@ -31,3 +31,11 @@ Profile:
 RegistrationController:
   path: /register
   controller: App\Controller\RegistrationController::register
+
+RegistrationPro:
+  path: /registerpro
+  controller: App\Controller\RegistrationController::registerpro
+
+RegistrationPart:
+  path: /registerpart
+  controller: App\Controller\RegistrationController::registerpart

@@ -10,6 +10,32 @@
 
     <h1> *** INSCRIPTION FORMULAIRE *** </h1>
 
+    	<nav class="log-nav">
+
+
+	            <span>
+                    <a href="{{ path("Index") }}">Accueil</a>
+                </span>
+            {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
+            {% if is_granted("ROLE_USER") %}
+    {#            1/ si l'utilisateur est connecté et a bien rentré sont login + mot de passe, #}
+    {#            il a automatiquement au moins le role "ROLE_USER", et voit donc un #}
+    {#            "bonjour" suivi de son prénom, ainsi qu'un lien pour se déconnecter #}
+                <span>
+                    Bonjour {{ app.user.name }}, Vous êtes déjà inscrit !
+                </span>
+
+            {% else %}
+    {#            Sinon, l'utilisateur n'est pas connecté, et on affiche un lien vers le formulaire de login #}
+    {#            et un autre vers la page de création de compte #}
+                <span>
+                    <a href="{{ path("RegistrationPart") }}">Consommateur engagé</a>
+                </span>
+                <span>
+                    <a href="{{ path("RegistrationPro") }}">Professionnel engagé</a>
+                </span>
+            {% endif %}
+
     <hr>
     1 page TWIG avec :
 
@@ -89,17 +115,7 @@
 
 
 
-    <h3> FORMULAIRE </h3>
-    
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+   
 
 
 

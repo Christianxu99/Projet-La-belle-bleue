@@ -8,23 +8,7 @@
     <h5> // prévoir une page TWIG avec du JS et PHP intégré // </h5>
 
 
-   <p> Facebook Connect </p>
-    <ul>
-        <li> <a href="https://www.youdemus.fr/2019/08/22/comment-integrer-le-facebook-login-sur-son-site-internet-wordpress/"> youdemus </a></li>
-        <li> <a href="https://www.commentcamarche.net/faq/30926-integrer-facebook-connect-sur-son-site"> comment ca marche </a> </li>
-        <li> <a href="https://www.k6agency.com/fr/blog/facebook-connect/"> k6 agency </a> </li>
-    </ul>
-
-
-    <p> Google Connect </p>
-    <ul>
-
-        <li> <a href="https://support.google.com/accounts/answer/112802?co=GENIE.Platform%3DAndroid&hl=fr"> Google </li>
-        <li> <a href="https://www.tutos.eu/3654"> Tuto </a> </li> 
-
-    </ul>
-
-
+ 
 
 <hr>
 
@@ -43,12 +27,13 @@
     <h1 class="h3 mb-3 font-weight-normal"> Connexion </h1>
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+
     <label for="inputPassword">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
-    >
+           >
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.

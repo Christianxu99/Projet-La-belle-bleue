@@ -18,46 +18,40 @@ class OpeningHours
     private $id;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $id_customer;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $day_name;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $opening;
+    private $dinner_opening;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $closing;
+    private $dinner_closing;
 
     /**
      * @ORM\ManyToOne(targetEntity=Establishment::class, inversedBy="display")
      */
     private $establishment_link;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lunch_opening;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lunch_closing;
+
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getIdCustomer(): ?int
-    {
-        return $this->id_customer;
-    }
-
-    public function setIdCustomer(int $id_customer): self
-    {
-        $this->id_customer = $id_customer;
-
-        return $this;
-    }
 
     public function getDayName(): ?string
     {
@@ -71,26 +65,26 @@ class OpeningHours
         return $this;
     }
 
-    public function getOpening(): ?string
+    public function getDinner_Opening(): ?string
     {
-        return $this->opening;
+        return $this->dinner_opening;
     }
 
-    public function setOpening(string $opening): self
+    public function setDinnerOpening(string $dinnerOpening): self
     {
-        $this->opening = $opening;
+        $this->dinnerOpening = $dinnerOpening;
 
         return $this;
     }
 
-    public function getClosing(): ?string
+    public function getDinnerClosing(): ?string
     {
-        return $this->closing;
+        return $this->dinnerClosing;
     }
 
-    public function setClosing(string $closing): self
+    public function setDinnerClosing(string $dinnerClosing): self
     {
-        $this->closing = $closing;
+        $this->dinnerClosing = $dinnerClosing;
 
         return $this;
     }
@@ -103,6 +97,30 @@ class OpeningHours
     public function setEstablishmentLink(?Establishment $establishment_link): self
     {
         $this->establishment_link = $establishment_link;
+
+        return $this;
+    }
+
+    public function getLunchOpening(): ?string
+    {
+        return $this->lunch_opening;
+    }
+
+    public function setLunchOpening(string $lunch_opening): self
+    {
+        $this->lunch_opening = $lunch_opening;
+
+        return $this;
+    }
+
+    public function getLunchClosing(): ?string
+    {
+        return $this->lunch_closing;
+    }
+
+    public function setLunchClosing(?string $lunch_closing): self
+    {
+        $this->lunch_closing = $lunch_closing;
 
         return $this;
     }

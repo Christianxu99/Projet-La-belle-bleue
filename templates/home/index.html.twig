@@ -38,14 +38,16 @@
 			var lat = 48.852969;
 			var lon = 2.349903;
 			var map = null;
+
 			// Fonction d'initialisation de la carte
 			function initMap() {
 				// Créer l'objet "map" et l'insèrer dans l'élément HTML qui a l'ID "map"
 				map = new google.maps.Map(document.getElementById("map"), {
+					
 					// Nous plaçons le centre de la carte avec les coordonnées ci-dessus
 					center: new google.maps.LatLng(lat, lon), 
 					// Nous définissons le zoom par défaut
-					zoom: 11, 
+					zoom: 12, 
 					// Nous définissons le type de carte (ici carte routière)
 					mapTypeId: google.maps.MapTypeId.ROADMAP, 
 					// Nous activons les options de contrôle de la carte (plan, satellite...)
@@ -57,6 +59,7 @@
 						style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR 
 					},
 					// Activation des options de navigation dans la carte (zoom...)
+				
 					navigationControl: true, 
 					navigationControlOptions: {
 						// Comment ces options doivent-elles s'afficher
@@ -71,22 +74,30 @@
 				initMap(); 
 			};
 		</script>
+		
 		<style type="text/css">
 			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
 				height:400px;
 			}
 		</style>
-		<title>Carte</title>
+
 	</head>
+
+
+
 	<body>
 		<div id="map">
 			<!-- Ici s'affichera la carte -->
 		</div>
 	</body>
+
+
+
+<script src= "{{ asset('js/home.js') }}"></script>
 </html>
 		
 
-<script src="index.js"></script>
+
 
 
 {% endblock %}

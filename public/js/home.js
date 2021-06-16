@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+
 // Nous ajoutons un marqueur
 var marker = new google.maps.Marker({
 	// Nous définissons sa position (syntaxe json)
@@ -7,3 +10,8 @@ var marker = new google.maps.Marker({
 	// Nous définissons à quelle carte il est ajouté
 	map: map
 });
+
+
+
+
+console.log('test');

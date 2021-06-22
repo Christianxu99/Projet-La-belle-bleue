@@ -14,17 +14,48 @@ import ReactDOM from "react-dom";
 
 import {SearchEstablishment} from "./components/Nav";
 
+import {Map} from "./components/Map";
 
 
-function App(){
+
+function Search(){
 
     return(
         
+
+        <div style={{ width:"30rem"}}>
+
         <SearchEstablishment/>
-        
+       
+
+
+        </div>
+
         // on aurait pu inclure un composant comme on l'a fait pendant le cours et le charger ici <Home /> par exemple
     )
 }
 
-ReactDOM.render(<App />, document.getElementById("root")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+
+function MapRender(){
+
+    return(
+
+      <Map/>   
+
+    )
+}
+
+if(document.getElementById("search"))
+{
+
+ReactDOM.render(<Search />, document.getElementById("search")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+}
+
+if(document.getElementById("map"))
+{
+
+    ReactDOM.render(<MapRender />, document.getElementById("map")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+}
+
+
 

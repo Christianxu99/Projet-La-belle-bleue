@@ -18,7 +18,7 @@ export function SearchEstablishment() {
 
     if (search) {
       const response = await axios.get(
-        `/api/search/${encodeURIComponent(search)}`
+        `/establishment/api/search/${encodeURIComponent(search)}`
       );
       console.log("🚀 ~ file: Nav.jsx", response.data);
       setResults(response.data);
@@ -29,7 +29,7 @@ export function SearchEstablishment() {
   const handleRequest2 = async (filtre) => { //filtre est un objet ici filtre.searchText et filtre.price
     if (search) {
       const response = await axios.get(
-        `/api/authors/searchquery`, { //l'url ne change jamais
+        `/establishment/api/search/`, { //l'url ne change jamais
           searchText: encodeURIComponent(filtre.searchText), //on peut mettre autant de paramètres qu'on le souhaite  ==>    q: encodeURIComponent(search), maData2: "test2", maData3: "test3"
           price: filtre.price
         }
@@ -49,8 +49,8 @@ export function SearchEstablishment() {
     setQuery(searchText);
     timerRef.current && clearTimeout(timerRef.current);
     timerRef.current = setTimeout(() => {
-      // handleRequest(searchText);
-      handleRequest2({searchText: searchText, price: 5000});
+       handleRequest(searchText);
+      //handleRequest2({searchText: searchText, price: 5000});
     }, 1000);
   };
   const handleKeyDown = (e) => {
@@ -120,7 +120,7 @@ export function SearchEstablishment() {
                       highlightClassName="highlistClass"
                       searchWords={query.split(" ")}
                       autoEscape={true}
-                      textToHighlight={res.nom}
+                      textToHighlight={res.name}
                     />
                   </li>
                 );

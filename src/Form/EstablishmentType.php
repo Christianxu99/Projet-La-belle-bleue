@@ -12,14 +12,31 @@ class EstablishmentType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id_customer')
+            ->add('name')
+            ->add('address')
+            ->add('zipcode')
+            ->add('city')
+            ->add('phone')
+
             ->add('type')
+            ->add('photo')
             ->add('description')
+
+            ->add('specialty_photo')
+            ->add('specialty_description')
+            ->add('specialty_price')
+
+            ->add('product_type')
             ->add('price_range')
-            ->add('id_product')
+
+            ->add('opening_hours')
+
+
+            ->add('website')
             ->add('facebook')
-            ->add('instagram')
             ->add('twitter')
+            ->add('instagram')
+
             ->add('has')
             ->add('belong')
         ;

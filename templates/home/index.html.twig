@@ -6,7 +6,7 @@
 {% block body %}
 
 
-<div id="root"></div>
+
 
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
@@ -16,6 +16,10 @@
 <div class="example-wrapper">
 
     <h1> LaBelle Bleue</h1>
+	
+	
+
+
 	<nav class="log-nav">
 
 
@@ -43,12 +47,7 @@
 
             {% endif %}
 
-
-      
-
         </nav>
-
-	
 
     <br>
     <hr>
@@ -62,82 +61,105 @@
         <li> Félicitations </li>
     </ul>
 
+</div>
 
 
-  
+<div id="root"></div>
+
+
+<div> 
+
+ICI LES SUGGESTIONS  -------------------------------------------------
+
 </div>
 
 
 <html>
-	<head>
-		<meta charset="utf-8">
-		<script src="https://maps.google.com/maps/api/js?key=AIzaSyB1iOgK-LcezlO9OwDmEZeY5QU36DTVyzs" type="text/javascript"></script>
-		<script async type="text/javascript">
-			// On initialise la latitude et la longitude de Paris (centre de la carte)
-			var lat = 48.852969;
-			var lon = 2.349903;
-			var map = null;
+   <head>
+      <meta name="viewport" content="initial-scale=1.0,
+            width=device-width" />
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+            type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" type="text/css"
+            href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+			
+  </head>
+  <body>
 
-			// Fonction d'initialisation de la carte
-			function initMap() {
-				// Créer l'objet "map" et l'insèrer dans l'élément HTML qui a l'ID "map"
-				map = new google.maps.Map(document.getElementById("map"), {
-					
-					// Nous plaçons le centre de la carte avec les coordonnées ci-dessus
-					center: new google.maps.LatLng(lat, lon), 
-					// Nous définissons le zoom par défaut
-					zoom: 12, 
-					// Nous définissons le type de carte (ici carte routière)
-					mapTypeId: google.maps.MapTypeId.ROADMAP, 
-					// Nous activons les options de contrôle de la carte (plan, satellite...)
-					mapTypeControl: true,
-					// Nous désactivons la roulette de souris
-					scrollwheel: false, 
-					mapTypeControlOptions: {
-						// Cette option sert à définir comment les options se placent
-						style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR 
-					},
-					// Activation des options de navigation dans la carte (zoom...)
-				
-					navigationControl: true, 
-					navigationControlOptions: {
-						// Comment ces options doivent-elles s'afficher
+    <div style="height: 480px" id="mapContainer"></div>
 
-						style: google.maps.NavigationControlStyle.ZOOM_PAN 
-					}
-				});
-			}
 
-            
-			window.onload = function(){
-				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-				initMap(); 
-			};
-		</script>
-		
-		<style type="text/css">
-			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-				height:400px;
-			}
-		</style>
+<script type="text/javascript" charset="utf-8">
+    //Initialize the Platform object:
+    var platform = new H.service.Platform({
+        'apikey': 'MPjPBkGSsV_-P78ADjkDAxVDwdpsU9pFqUoZMRc36p8'
+    });
 
-	</head>
+    // Get the default map types from the Platform object:
+    var defaultLayers = platform.createDefaultLayers();
+
+    // Instantiate the map:
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.vector.normal.map,
+        {
+            zoom: 12,
+            center: { lng: 2.349903, lat: 48.852969}
+        });
+
+    // Create the default UI:
+    var ui = H.ui.UI.createDefault(map, defaultLayers, 'fr-FR');
+
+
+	ui.getControl('zoom').setDisabled(false)
+
+	var mapSettings = ui.getControl('mapsettings');
+    var zoom = ui.getControl('zoom');
+    var scalebar = ui.getControl('scalebar');
+    
+    mapSettings.setAlignment('bottom-right');
+    zoom.setAlignment('bottom-right');
+    scalebar.setAlignment('bottom-right');
 
 
 
-	<body>
-		<div id="map">
-			<!-- Ici s'affichera la carte -->
-		</div>
-	</body>
+      // Create a marker icon from an image URL:
+      var icon = new H.map.Icon('images/fourchette.jpeg');
+      
+      // Create a marker using the previously instantiated icon:
+      var marker = new H.map.Marker({ lat: 52.5, lng: 13.4 }, { icon: icon });
+      
+      // Add the marker to the map:
+      map.addObject(marker);
 
 
 
-<script src= "{{ asset('js/home.js') }}"></script>
+
+	  // Create an info bubble object at a specific geographic location:
+      var bubble = new H.ui.InfoBubble({ lng: 13.4, lat: 52.51 }, {
+                      content: '<b>Hello World!</b>'
+                   });
+      
+      // Add info bubble to the UI:
+      ui.addBubble(bubble);
+
+
+</script>
+
+
+  </body>
 </html>
+
+
+
+</html>
+
 		
 
 
 
-
-{% endblock %}
+{% endblock %} 

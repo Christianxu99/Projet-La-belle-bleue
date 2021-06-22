@@ -12,12 +12,19 @@ import React from "react";
 
 import ReactDOM from "react-dom";
 
+import {SearchEstablishment} from "./components/Nav";
+
+
 
 function App(){
 
     return(
-        <div>JE SUIS UN COMPOSANT REACT</div> // on aurait pu inclure un composant comme on l'a fait pendant le cours et le charger ici <Home /> par exemple
+        
+        <SearchEstablishment/>
+        
+        // on aurait pu inclure un composant comme on l'a fait pendant le cours et le charger ici <Home /> par exemple
     )
 }
 
 ReactDOM.render(<App />, document.getElementById("root")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+

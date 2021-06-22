@@ -23,7 +23,7 @@ export const Map = () => {
     const defaultLayers = platform.createDefaultLayers();
     const hMap = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
       center: { lat: 48.866667, lng: 2.333333 },
-      zoom: 12,
+      zoom: 11.5,
       pixelRatio: window.devicePixelRatio || 1
     });
 
@@ -45,5 +45,5 @@ export const Map = () => {
   
 
 
-  return <div className="map" ref={mapRef} style={{ height: "500px" }} />;
+  return <div className="map" ref={mapRef} style={{ height: "300px" }} />;
 };

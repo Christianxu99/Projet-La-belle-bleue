@@ -119,6 +119,16 @@ class Establishment
      */
     private $id_pro;
 
+    /**
+     * @ORM\Column(type="decimal", precision=9, scale=6)
+     */
+    private $longitude;
+
+    /**
+     * @ORM\Column(type="decimal", precision=8, scale=6)
+     */
+    private $latitude;
+
     public function __construct()
     {
         $this->has = new ArrayCollection();
@@ -429,6 +439,30 @@ class Establishment
     public function setIdPro(?User $id_pro): self
     {
         $this->id_pro = $id_pro;
+
+        return $this;
+    }
+
+    public function getLongitude(): ?string
+    {
+        return $this->longitude;
+    }
+
+    public function setLongitude(string $longitude): self
+    {
+        $this->longitude = $longitude;
+
+        return $this;
+    }
+
+    public function getLatitude(): ?string
+    {
+        return $this->latitude;
+    }
+
+    public function setLatitude(string $latitude): self
+    {
+        $this->latitude = $latitude;
 
         return $this;
     }

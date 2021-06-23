@@ -36,75 +36,155 @@
 
 
 
-<style>
+{# <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+</style> #}
+
 
 <div class="example-wrapper">
 
     <h1> LaBelle Bleue</h1>
+
+
+        <main>
+        <div class="container d-flex justify-content-between">
+            <!-- Barre de recherche  -->
+            {# MENU DE RECHERCHE #}
+            <form class="barre-recherche">
+            <div id="search"></div>
+            <button class="btn localisation">
+            <svg width="200" height="100">
+              <img src="../images/localisation.svg" alt="localisation" class="localisation"></button>
+            </svg>
+            </form>
+
+            <!-- Bouton filtrer -->
+            <button type="button" class="btn filtrer"> 
+            <svg width="200" height="100">
+              <img src="../images/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
+            </svg>
+        </div>
+
+
+        <div class="container home">
+
+            <div class="row home">
+              <div class="block-resultat col-sm-4">
+                    <div class="titre-resultat text-center">
+                        <h2>Notre sélection</h2>
+                        <p>Les mieux notés près de chez vous</p>
+                    </div>
+
+                    <div class="les-resultats">
+                  
+                  {% for spot in bestSpots %}
+                  <div class="un-resultat d-flex align-items-center">
+                      <div class="image-commerce"></div>
+                        <div class="texte-resultat">
+                          <h3>{{ spot['name'] }}</h3>
+                          <p class="resto-texte d-flex align-items-center">Restaurant</h3>
+                            <div class="gamme-de-prix">
+                              <svg width="200" height="100"> 
+                                  <img src="../images/euro.svg" alt="euro" class="euro">
+                              </svg>
+                            </div>
+                            <div class="avis-moyenne">
+                              <svg width="200" height="100">
+                                  <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="../images/etoile_vide.svg" alt="étoile vide">
+                              </svg>
+                            </div>
+                        </div>
+                  </div>
+                  {% endfor %}
+                  
+{# 
+                  <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                        <h3>Nom de l'épicerie</h3>
+                        <p class="epicerie-texte d-flex align-items-center">Epicerie</h3>
+
+
+                        <div class="gamme-de-prix">
+                          <svg width="200" height="100">
+                            <img src="../images/euro.svg" alt="euro" class="euro">
+                          </svg>
+                        </div>
+
+
+                          <div class="avis-moyenne">
+                            <svg width="200" height="100">
+                              <img src="../images/étoile_pleine.svg" alt="etoile pleine"> 
+                            </svg>
+
+                            <svg width="200" height="100">
+                              <img src="../images/etoile_vide.svg" alt="étoile vide">
+                            </svg>
+                          </div>
+                      </div>
+                </div>
+
+                <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                          <h3>Nom du bar</h3>
+                          <p class="bar-texte d-flex align-items-center">Bar</h3>
+                            <div class="gamme-de-prix">
+                            <svg width="200" height="100">
+                              <img src="../images/euro.svg" alt="euro" class="euro">
+                            </svg>
+                            </div>
+
+                            <div class="avis-moyenne">
+                              <svg width="200" height="100">
+                                <img src="../images/étoile_pleine.svg" alt="etoile pleine">                                      
+                              </svg>
+
+                              <svg width="200" height="100">
+                                <img src="../images/etoile_vide.svg" alt="étoile vide">
+                              </svg>
+                            </div>
+                      </div>
+                </div> #}
+
+                <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                          <h3>Nom du bar</h3>
+                          <p class="bar-texte d-flex align-items-center">Bar</h3>
+                            <div class="gamme-de-prix">
+                              <svg width="200" height="100">
+                                <img src="../images/euro.svg" alt="euro" class="euro">
+                              </svg>
+                            </div>
+                            <div class="avis-moyenne">
+                              <svg width="200" height="100">
+                                <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                              </svg>
+                              <svg width="200" height="100">
+                                <img src="../images/etoile_vide.svg" alt="étoile vide">
+                              </svg>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+
+
+               
+              
+              </div>
+            </div> 
+
+           {#  here map #}
+<div class="map col-sm-8" id="map">
+  
+
+          </div>
+
+    </main>
 	
 	
-
-
-	<nav class="log-nav">
-
-
-	            <span>
-                    <a href="{{ path("Index") }}">Accueil</a>
-                </span>
-            {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
-            {% if is_granted("ROLE_USER") %}
-
-                <span>
-                    Bonjour {{ app.user.name }} !
-                </span>
-                <a href="{{ path("Profile") }}">Mon profile</a>
-                 <a href="{{ path("app_logout") }}">Se déconnecter</a> 
-            {% else %}
-
-
-			    <span>
-                    <a href="{{ path("Login") }}">Se connecter</a>
-                </span>
-
-                <span>
-                    <a href="{{ path("RegistrationController") }}">Créer un compte</a>
-                </span>
-
-            {% endif %}
-
-        </nav>
-
-{# MENU DE RECHERCHE #}
-<div id="search"></div>
-
-
-    <br>
-    <hr>
-    <br>
-
-
-    <ul>
-        <li> Votre entreprise  </li>
-        <li> Votre établissement, Vos spécialités, vos choix, vos horaires</li>
-        <li> Votre présence en ligne </li>
-        <li> Félicitations </li>
-    </ul>
-
-</div>
-
-<div> 
-
-ICI LES SUGGESTIONS  -------------------------------------------------
-
-</div>
-
-
-{# HERE MAP#}
-<div id="map"></div>
-
 
 
 {% endblock %} 

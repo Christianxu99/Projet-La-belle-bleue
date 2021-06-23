@@ -1,21 +1,142 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>{% block title %}LaBelle Bleue{% endblock %}</title>
+                <!-- Bootstrap CSS -->
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+                <link rel="preconnect" href="https://fonts.gstatic.com">
+                <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
+                {% block stylesheets %}
+                <link rel="stylesheet" href="../css/style.css">
+                {% endblock %}
+
+            </head>
+        <body>
+
+
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
            {{ encore_entry_link_tags('app') }} 
-        {% endblock %}
-
-        
     </head>
     <body> 
 
-        {% block body %} 
 
+
+	<nav class="log-nav">
+
+
+	            <span>
+                    <a href="{{ path("Index") }}">Accueil b</a>
+                </span>
+            {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
+            {% if is_granted("ROLE_USER") %}
+
+                <span>
+                    Bonjour {{ app.user.name }} !
+                </span>
+                <a href="{{ path("Profile") }}">Mon profil</a>
+                 <a href="{{ path("app_logout") }}">Se déconnecter</a> 
+            {% else %}
+
+
+			    <span>
+                    <a href="{{ path("Login") }}">Se connecter</a>
+                </span>
+
+                <span>
+                    <a href="{{ path("RegistrationController") }}">Créer un compte</a>
+                </span>
+
+            {% endif %}
+
+        </nav>
+
+          <header>
+                <div class="container">  
+                    <nav>
+                        <!-- Menu burger -->
+                        <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+                        <label for="menu-checkbox" class="menu-toggle">≡</label>
+                        <label for="menu-checkbox" class="menu-croix">x</label>
+                        
+                        <!-- Barre de navigation -->
+                        <div class="liens-nav">
+
+
+	            <span>
+                    <a href="{{ path("Index") }}">
+                        <svg width="200" height="100">
+                            <img src="../images/ant-design_home-filled.svg" alt="home"/>
+                        </svg>
+                        Accueil
+                    </a>
+
+                </span>
+            {# ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
+            {% if is_granted("ROLE_USER") %}
+
+                <span>
+                    Bonjour {{ app.user.name }} !
+                </span>
+                <a href="{{ path("Profile") }}">Mon profil</a>
+                <a href="{{ path("app_logout") }}">Se déconnecter</a> 
+            
+            
+            {% else %}
+			    <span>
+                    <a href="{{ path("Login") }}">Se connecter</a>
+                </span>
+
+                <span>
+                    <a href="{{ path("RegistrationController") }}">Créer un compte</a>
+                </span>
+            {% endif %}
+
+
+                    <div>
+                        <a href="{{ path("Index") }}">
+                        <img src="img/ant-design_home-filled.svg" alt="home"/> Home</a>
+
+                        <a href="{{ path("Index") }}">
+                        <img src="img/ri_earth-line.svg" alt="planete"/> Notre blog</a>
+
+                        <a href="#" class="logo"><img src="img/logo.png" alt="logo"/></a> 
+                        <a href="{{ path("Index") }}">
+                        <img src="img/fluent_mail-16-filled.svg" alt="contact"/> Nous contacter</a>
+
+                        <a href="{{ path("Profile") }}">
+
+                        <img src="img/profile_picture.svg" alt="inscription"/> Me connecter</a>
+
+                        <a href="#"><img src="img/profile_picture.svg" alt="inscription"/> M'inscrire</a>
+
+                    </div>
+
+                    </nav>
+
+                        <!-- Logo Mobile -->
+                        <a href="#" class="logo-mobile">
+                        <svg width="200" height="100">
+                            <img src="../images/logo.png" alt="logo"/></a> 
+                        </svg>
+                </div>
+            </header>
+
+        {% block body %} 
+        CECI SERA LE BODY DE LA PAGE
         {% endblock %}
+
+            <footer>
+                <a href="#">Besoin d'aide ?</a>
+                <a href="#">Voir nos CGU/CGV</a>
+                <span>LaBelle Bleue © 2021</span>
+            </footer>
+
         
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

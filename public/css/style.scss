@@ -1,0 +1,187 @@
+@import'header';
+@import'footer';
+@import'page-filtres';
+
+/******************************** COULEURS ********************************/
+
+$white: rgb(255, 255, 255);
+$green:#2b9780;
+$blue:#1C9DC6;
+$corps:rgb(59, 59, 59); 
+$shadow: 0px -2px 12px rgb(204, 204, 204);
+$black:rgb(82, 82, 82);
+
+
+/******************************** BODY ********************************/
+body {
+font-family: 'Lato', sans-serif;
+background-image: url(../images/background.png);
+color:$corps;
+}
+/******************************** TITRE H1 H2 H3 ********************************/
+h1, h2, h3 {
+font-family: 'Economica', sans-serif;
+text-transform: uppercase;
+color:$blue;
+letter-spacing: 1px;
+}
+h3 {
+font-family: 'Lato', sans-serif;
+font-size: 1rem;
+}
+
+/******************************** CONTENU ********************************/
+.container.main {
+background:$white;
+padding: 3em;
+border-radius: 1em;
+}
+
+/******************************** RECHERCHE ********************************/
+.adresse {
+	border-radius: 30px;
+	padding: 7px 2em;
+}
+.barre-recherche {
+	width: 93%;
+	margin-left: -1em;
+	position:relative;
+}
+/******************************** Localisation ********************************/
+.localisation {
+	position: absolute;
+	top: -2px;
+	right: 3px;
+}
+.btn.localisation:hover {
+	background: none;
+}
+/******************************** BOUTON FILTRER ***************************/
+.filtrer {
+	width: 100px;
+	background:$green;
+	color: $white;
+	margin: 0 1em;
+}
+.btn:hover {
+	color:$white;
+	background:$black;
+}
+/******************************** BLOC RESULTAT *****************************/
+.block-resultat {
+	background:$white;
+	border-radius: 1em;
+	margin: 1em 0;
+	padding: 2em;
+	box-shadow:$shadow;
+}
+/****** Les résultats ******/
+.les-resultats {
+	height: 30em;
+	overflow: auto;
+}
+
+.un-resultat {
+	padding: 1em 0;
+}
+
+.texte-resultat {
+	padding: 0 1em;
+	width: 57%;
+}
+
+.euro {
+	background:$green;
+	padding: 4px;
+	border-radius: 1em;
+}
+/****** Image commerce ******/
+.image-commerce {
+background-image: url(../img/restaurant.jpg);
+width: 10em;
+background-size: cover;
+background-position: center;
+border-radius: 1em;
+height: 8em;
+}
+/****** Si c'est un restaurant ******/
+.resto-texte {
+margin: 0;
+}
+.resto-texte::before {
+content: "";
+background-image: url(../img/icon-resto.svg);
+width: 19px;
+height: 20px;
+display: block;
+margin-right: 9px;
+}
+/****** Si c'est une épicerie ******/
+.epicerie-texte {
+margin: 0;
+}
+.epicerie-texte::before {
+content: "";
+background-image: url(../img/epicerie.svg);
+width: 21px;
+height: 20px;
+display: block;
+margin-right: 9px;
+}
+
+/****** Si c'est un bar ******/
+.bar-texte {
+margin: 0;
+}
+.bar-texte::before {
+content: "";
+background-image: url(../img/icon_bar.svg);
+width: 19px;
+height: 20px;
+display: block;
+margin-right: 9px;
+}
+
+/****** Map ******/
+.map {
+margin: 1em 0;
+}
+
+
+/********************************************************************************************************************************************************
+**************************************************************************** MOBILE *********************************************************************
+********************************************************************************************************************************************************/
+
+@media screen and (max-width: 640px) {
+	/******************************** RECHERCHE ********************************/
+	.barre-recherche {
+		margin: 0 1em;
+	}
+
+	/******************************** Bouton filtrer ********************************/
+	.filtrer {
+		font-size: 0;
+		width: 44px;
+		border-radius: 100%;
+		height: 44px;
+	}
+	/******************************** Home ********************************/
+	.row.home {
+		flex-direction: column-reverse;
+	}
+	/******************************** MAP ********************************/
+	.map {
+		margin: 1em 0 0;
+		padding: 0;
+	}
+	/******************************** Les résultats ********************************/
+	.block-resultat {
+		position: relative;
+		margin: 0 0;
+		padding: 24px 2em;
+	}
+
+	.les-resultats {
+		height: 344px;
+	}
+  }

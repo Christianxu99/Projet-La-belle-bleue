@@ -1,0 +1,145 @@
+html {
+    font-size: 62.5%;
+    
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+/******************************** TITRE H1 H2 H3 ********************************/
+
+h1, h2, h3 {
+    font-family: 'Economica', sans-serif;
+    text-transform: uppercase;
+    color:#1C9DC6;
+    letter-spacing: 1px;
+    }
+    
+    h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    }
+
+/******************************** DIV CARD ***************************************/
+
+p {
+    color: #5D7067;
+}
+    
+.inscription_1_card {
+    background-color: white;
+    margin-right: 33%;
+    margin-left: 33%;
+    margin-top: 8.8rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px -2px 12px #ccc;
+    
+}
+    
+.inscription_1_h1_card {
+    padding-top: 4.6rem;
+    margin-bottom: 5rem;
+}
+
+.inscription_1_boutons {
+    padding-top: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 4rem;
+}
+
+
+.inscription_1_bouton_part {
+    background-image: url('../img/inscription_bouton_bleu.png');
+    display: inline-block;
+    border-radius: 30px;  
+    width:20rem;
+    height:5rem; 
+}
+
+.inscription_1_bouton_pro {
+    background-image: url('../img/inscription_bouton_bleu.png');
+    display: inline-block;
+    border-radius: 30px; 
+    width:20rem;
+    height:5rem; 
+    text-align: center;
+}
+
+.inscription_1_boutons a {
+    color:white;
+    text-decoration: none;
+    line-height: 3;
+}
+
+.ou_1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+.inscription_1_rs {
+    margin-top: 5rem;
+}
+
+
+.inscription_1_google {
+    margin-left: 3rem;
+}
+
+
+.inscription_1_deja_client {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+
+}
+
+.inscription_1_deja_client a {
+    color: #5D7067;
+    line-height: none;
+    margin-left:1rem;
+} 
+
+
+@media screen and (max-width: 640px) {
+
+
+    .inscription_1_card {
+        background-color: white;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        border-radius: 30px;
+        box-shadow: 0px -2px 12px #ccc;
+    }
+
+
+    .inscription_1_boutons {
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 25%;
+        margin-right: auto;
+    }
+
+    .inscription_1_boutons a {
+        margin-bottom : 2rem;
+    }
+  
+    
+}

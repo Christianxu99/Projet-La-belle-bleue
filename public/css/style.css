@@ -1,0 +1,499 @@
+@charset "UTF-8";
+/******************************** Header ********************************/
+header {
+  background-image: url(../images/header.png);
+  background-repeat: no-repeat;
+  margin-top: -1px;
+  height: 8em;
+}
+
+/******************************** Barre de navigation ********************************/
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.liens-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  text-align: right;
+  margin-top: 3em;
+  text-transform: uppercase;
+}
+
+#menu-checkbox, .menu-toggle, .menu-croix {
+  display: none;
+}
+
+nav a {
+  color: white;
+  padding: 0 2em;
+  text-decoration: none;
+  height: 2em;
+  display: block;
+}
+
+nav a, .liens-nav a {
+  color: #fff;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: white;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: relative;
+  opacity: 0;
+  top: 4px;
+}
+
+nav a:hover::after {
+  color: white;
+  width: 100%;
+  opacity: 1;
+}
+
+nav img {
+  width: 19px;
+  position: relative;
+  top: -1px;
+  margin: 4px;
+}
+
+/******************************** LOGO ********************************/
+.logo img {
+  width: auto;
+  margin: -25px 0;
+}
+
+.logo::after {
+  display: none;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  /******************************** Barre de navigation ********************************/
+  nav {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  nav a {
+    padding: 26px 1em;
+    color: #043A5B;
+  }
+  nav img {
+    width: 24px;
+    margin: 0 14px;
+  }
+  .liens-nav {
+    max-height: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: left;
+    position: absolute;
+    left: -4em;
+    top: 4em;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #B7C8CE;
+    z-index: 2;
+    height: 30%;
+    top: 0;
+    -webkit-transition: .7s;
+    transition: .7s;
+    border-radius: 0 10px 10px 0;
+  }
+  #menu-checkbox, .menu-toggle, .menu-croix {
+    display: block;
+  }
+  .menu-croix, .menu-checkbox:checked ~ .menu-toggle {
+    display: none;
+  }
+  .menu-checkbox:checked ~ .liens-nav {
+    max-height: 1000px;
+    left: 0px;
+  }
+  .menu-checkbox:checked ~ .menu-croix, .menu-toggle {
+    display: block;
+    color: white;
+    font-size: 2rem;
+  }
+  .menu-checkbox {
+    opacity: 0;
+    position: absolute;
+    top: -1000px;
+  }
+  .menu-toggle {
+    font-size: 3rem;
+    color: white;
+  }
+  /******************************** LOGO ********************************/
+  .logo {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+    position: absolute;
+    top: 3em;
+    right: 5em;
+  }
+  .logo-mobile img {
+    width: 13em;
+  }
+}
+
+/******************************** FOOTER ********************************/
+footer {
+  background-color: #1C9DC6;
+  color: white;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
+  padding: 1em;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 3em;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/******************************** FOOTER MOBILE********************************/
+@media screen and (max-width: 640px) {
+  footer {
+    display: none;
+  }
+}
+
+.popup_filtres {
+  position: absolute;
+  background: white;
+  display: block;
+  top: 20%;
+  padding: 2em;
+  left: 31%;
+  border-radius: 30px;
+  text-align: center;
+  width: 42%;
+  -webkit-box-shadow: 0px -2px 12px #cccccc;
+  box-shadow: 0px -2px 12px #cccccc;
+}
+
+.filtres p {
+  width: 10em;
+  text-align: left;
+}
+
+.filtres label {
+  margin: 1em;
+}
+
+input[type="checkbox"]:checked + .bouton.restaurant {
+  background-image: url(../images/resto_selected.svg);
+  height: 88px;
+  width: 71px;
+}
+
+input[type="checkbox"]:checked + .bouton.restaurant img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.epicerie {
+  background-image: url(../images/epicerie_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.epicerie img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.bar {
+  background-image: url(../images/bar_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.bar img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.veggie {
+  background-image: url(../images/veggie_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.veggie img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.vegan {
+  background-image: url(../images/vegan_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.vegan img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.bio {
+  background-image: url(../images/bio_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.bio img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.local {
+  background-image: url(../images/local_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.local img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.vrac {
+  background-image: url(../imges/vrac_selected.svg);
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.vrac img {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .bouton.un_euro {
+  background-image: url();
+  height: 88px;
+  width: 60px;
+}
+
+input[type="checkbox"]:checked + .bouton.un_euro img {
+  display: none;
+}
+
+/******************************** COULEURS ********************************/
+/******************************** BODY ********************************/
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url(../images/background.png);
+  color: #3b3b3b;
+}
+
+/******************************** TITRE H1 H2 H3 ********************************/
+h1, h2, h3 {
+  font-family: 'Economica', sans-serif;
+  text-transform: uppercase;é
+  color: #1C9DC6;
+  letter-spacing: 1px;
+}
+
+h3 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+}
+
+/******************************** CONTENU ********************************/
+.container.main {
+  background: white;
+  padding: 3em;
+  border-radius: 1em;
+}
+
+/******************************** RECHERCHE ********************************/
+.adresse {
+  border-radius: 30px;
+  padding: 7px 2em;
+}
+
+.barre-recherche {
+  width: 93%;
+  margin-left: -1em;
+  position: relative;
+}
+
+/******************************** Localisation ********************************/
+.localisation {
+  position: absolute;
+  top: -2px;
+  right: 3px;
+}
+
+.btn.localisation:hover {
+  background: none;
+}
+
+/******************************** BOUTON FILTRER ***************************/
+.filtrer {
+  width: 100px;
+  background: #2b9780;
+  color: white;
+  margin: 0 1em;
+}
+
+.btn:hover {
+  color: white;
+  background: #525252;
+}
+
+/******************************** BLOC RESULTAT *****************************/
+.block-resultat {
+  background: white;
+  border-radius: 1em;
+  margin: 1em 0;
+  padding: 2em;
+  -webkit-box-shadow: 0px -2px 12px #cccccc;
+          box-shadow: 0px -2px 12px #cccccc;
+}
+
+/****** Les résultats ******/
+.les-resultats {
+  height: 30em;
+  overflow: auto;
+}
+
+.un-resultat {
+  padding: 1em 0;
+}
+
+.texte-resultat {
+  padding: 0 1em;
+  width: 57%;
+}
+
+.euro {
+  background: #2b9780;
+  padding: 4px;
+  border-radius: 1em;
+}
+
+/****** Image commerce ******/
+.image-commerce {
+  background-image: url(../images/restaurant.jpg);
+  width: 10em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1em;
+  height: 8em;
+}
+
+/****** Si c'est un restaurant ******/
+.resto-texte {
+  margin: 0;
+}
+
+.resto-texte::before {
+  content: "";
+  background-image: url(../images/icon-resto.svg);
+  width: 19px;
+  height: 20px;
+  display: block;
+  margin-right: 9px;
+}
+
+/****** Si c'est une épicerie ******/
+.epicerie-texte {
+  margin: 0;
+}
+
+.epicerie-texte::before {
+  content: "";
+  background-image: url(../images/epicerie.svg);
+  width: 21px;
+  height: 20px;
+  display: block;
+  margin-right: 9px;
+}
+
+/****** Si c'est un bar ******/
+.bar-texte {
+  margin: 0;
+}
+
+.bar-texte::before {
+  content: "";
+  background-image: url(../images/icon_bar.svg);
+  width: 19px;
+  height: 20px;
+  display: block;
+  margin-right: 9px;
+}
+
+/****** Map ******/
+.map {
+  margin: 1em 0;
+}
+
+/********************************************************************************************************************************************************
+**************************************************************************** MOBILE *********************************************************************
+********************************************************************************************************************************************************/
+@media screen and (max-width: 640px) {
+  /******************************** RECHERCHE ********************************/
+  .barre-recherche {
+    margin: 0 1em;
+  }
+  /******************************** Bouton filtrer ********************************/
+  .filtrer {
+    font-size: 0;
+    width: 44px;
+    border-radius: 100%;
+    height: 44px;
+  }
+  /******************************** Home ********************************/
+  .row.home {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  /******************************** MAP ********************************/
+  .map {
+    margin: 1em 0 0;
+    padding: 0;
+  }
+  /******************************** Les résultats ********************************/
+  .block-resultat {
+    position: relative;
+    margin: 0 0;
+    padding: 24px 2em;
+  }
+  .les-resultats {
+    height: 344px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

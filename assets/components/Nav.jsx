@@ -65,6 +65,7 @@ export function SearchEstablishment() {
     setQuery("");
   };
   const handleSelect = (id) => {
+    document.location.href="https://127.0.0.1:8000/home";
     console.log(`Vous avez cliqué sur : ${id}`);
     setShowList(false);
   };
@@ -79,7 +80,7 @@ export function SearchEstablishment() {
           className="searchBox"
           type="text"
           value={query}
-          placeholder="Chercher..."
+          placeholder="Tapez votre adresse ici"
           style={{ width: "100%" }}
           name="search_authors"
           onChange={handleChange}

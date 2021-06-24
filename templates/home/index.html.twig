@@ -3,10 +3,10 @@
 {% block title %}LaBelleBleue{% endblock %}
 
 
-
-
 {% block body %}
+
 {% block javascripts %}
+
     {{ parent()}}
       <script
     type="text/javascript"
@@ -60,7 +60,7 @@
                 <span>
                     Bonjour {{ app.user.name }} !
                 </span>
-                <a href="{{ path("Profile") }}">Mon profile</a>
+                <a href="{{ path("Profile") }}">Mon profil</a>
                  <a href="{{ path("app_logout") }}">Se déconnecter</a> 
             {% else %}
 

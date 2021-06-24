@@ -21,6 +21,25 @@ class EstablishmentController extends AbstractController
 {
 
     /**
+     * @Route("/api/listplace", name="livre_index", methods={"GET"})
+     */
+    public function listPlaces(EstablishmentRepository $establishmentRepository): Response
+    {
+
+        $tabResult = array();
+
+      $places = $establishmentRepository->findAll();
+
+        foreach($places as $row){
+
+            array_push($tabResult, array($row->getName() => array('lat' => $row->getLatitude(), 'long' => $row->getLongitude())));
+        }
+
+        return new JsonResponse($places);
+    }
+    
+
+    /**
      * @Route("/api/search/{query}", methods={"GET"})
      */
     public function search($query, EstablishmentRepository $establishmentRepository, LoggerInterface $logger)

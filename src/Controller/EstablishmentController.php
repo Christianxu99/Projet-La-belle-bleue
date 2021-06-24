@@ -26,19 +26,33 @@ class EstablishmentController extends AbstractController
     public function listPlaces(EstablishmentRepository $establishmentRepository): Response
     {
 
+        $places = [
+            'paris' => [
+                'lat' => 48.8567,
+                'lng' => 2.3508,
+            ],
+            'lapasserelle' => [
+                'lat' => 48.88296194821423,
+                'lng' => 2.3664626944065055,
+            ],
+            'toureiffel' => [
+                'lat' => 48.85838123314168,
+                'lng' => 2.2944948468669724
+            ]
+        ];
+
         $tabResult = array();
 
-      $places = $establishmentRepository->findAll();
-
-        foreach($places as $row){
-
-            array_push($tabResult, array($row->getName() => array('lat' => $row->getLatitude(), 'long' => $row->getLongitude())));
-        }
-
-        return new JsonResponse($places);
-    }
+        $places = $establishmentRepository->findAll();
+  
+          foreach($places as $row){
+  
+              $tabResult[$row->getName() ] = array('lat' => $row->getLatitude(), 'lng' => $row->getLongitude());
+          }
+  
+          return new JsonResponse($tabResult);
+      }
     
-
     /**
      * @Route("/api/search/{query}", methods={"GET"})
      */

@@ -16,6 +16,13 @@ import {SearchEstablishment} from "./components/Nav";
 
 import {Map} from "./components/Map";
 
+import {SearchAddress} from "./components/SearchAdress";
+
+
+
+
+
+
 
 
 function Search(){
@@ -26,6 +33,9 @@ function Search(){
         <div style={{ width:"30rem"}}>
 
         <SearchEstablishment/>
+        <SearchAddress/>
+    
+    
        
 
 

@@ -80,7 +80,7 @@ export function SearchEstablishment() {
           className="searchBox"
           type="text"
           value={query}
-          placeholder="Tapez votre adresse ici"
+          placeholder="ETABLISSEMENT ICI"
           style={{ width: "100%" }}
           name="search_authors"
           onChange={handleChange}

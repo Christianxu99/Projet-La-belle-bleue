@@ -26,21 +26,6 @@ class EstablishmentController extends AbstractController
     public function listPlaces(EstablishmentRepository $establishmentRepository): Response
     {
 
-        $places = [
-            'paris' => [
-                'lat' => 48.8567,
-                'lng' => 2.3508,
-            ],
-            'lapasserelle' => [
-                'lat' => 48.88296194821423,
-                'lng' => 2.3664626944065055,
-            ],
-            'toureiffel' => [
-                'lat' => 48.85838123314168,
-                'lng' => 2.2944948468669724
-            ]
-        ];
-
         $tabResult = array();
 
         $places = $establishmentRepository->findAll();

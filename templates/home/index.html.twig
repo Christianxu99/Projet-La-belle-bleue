@@ -36,66 +36,16 @@
 
 
 
-{# <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style> #}
-
-
-<div class="example-wrapper">
-
-    <h1> LaBelle Bleue</h1>
-	
-	
-
-
-	<nav class="log-nav">
-
-
-	            <span>
-                    <a href="{{ path("Index") }}">Accueil</a>
-                </span>
-            {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
-            {% if is_granted("ROLE_USER") %}
-
-                <span>
-                    Bonjour {{ app.user.name }} !
-                </span>
-                <a href="{{ path("Profile") }}">Mon profil</a>
-                 <a href="{{ path("app_logout") }}">Se déconnecter</a> 
-            {% else %}
-
-
-			    <span>
-                    <a href="{{ path("Login") }}">Se connecter</a>
-                </span>
-
-                <span>
-                    <a href="{{ path("RegistrationController") }}">Créer un compte</a>
-                </span>
-
-            {% endif %}
-
-        </nav>
-
-
-        <main>
+<main>
         <div class="container d-flex justify-content-between">
             <!-- Barre de recherche  -->
-            {# MENU DE RECHERCHE #}
             <form class="barre-recherche">
-            <div id="search"></div>
-            <button class="btn localisation">
-            <svg width="200" height="100">
-              <img src="../images/localisation.svg" alt="localisation" class="localisation"></button>
-            </svg>
+            <input class="adresse form-control me-2" type="search" placeholder="Votre adresse" aria-label="Search">
+            <button class="btn localisation"><img src="img/localisation.svg" alt="localisation" class="localisation"></button>
             </form>
 
             <!-- Bouton filtrer -->
-            <button type="button" class="btn filtrer"> 
-            <svg width="200" height="100">
-              <img src="../images/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
-            </svg>
+            <button type="button" class="btn filtrer"> <img src="img/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
         </div>
 
 
@@ -109,51 +59,33 @@
                     </div>
 
                     <div class="les-resultats">
-                  
-                  {% for spot in bestSpots %}
+
                   <div class="un-resultat d-flex align-items-center">
                       <div class="image-commerce"></div>
                         <div class="texte-resultat">
-                          <h3>{{ spot['name'] }}</h3>
-                          <p class="resto-texte d-flex align-items-center">Restaurant</h3>
-                            <div class="gamme-de-prix">
-                              <svg width="200" height="100"> 
-                                  <img src="../images/euro.svg" alt="euro" class="euro">
-                              </svg>
-                            </div>
-                            <div class="avis-moyenne">
-                              <svg width="200" height="100">
-                                  <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="../images/etoile_vide.svg" alt="étoile vide">
-                              </svg>
-                            </div>
+                            <h3>Nom du restaurant</h3>
+                            <p class="resto-texte d-flex align-items-center">Restaurant</h3>
+                                        <div class="gamme-de-prix">
+                                            <img src="img/euro.svg" alt="euro" class="euro">
+                                        </div>
+                                        <div class="avis-moyenne">
+                                            <img src="img/étoile_pleine.svg" alt="etoile pleine"> 
+                                            <img src="img/etoile_vide.svg" alt="étoile vide">
+                                        </div>
                         </div>
                   </div>
-                  {% endfor %}
-                  
-{# 
+
                   <div class="un-resultat d-flex align-items-center">
                     <div class="image-commerce"></div>
                       <div class="texte-resultat">
-                        <h3>Nom de l'épicerie</h3>
-                        <p class="epicerie-texte d-flex align-items-center">Epicerie</h3>
-
-
-                        <div class="gamme-de-prix">
-                          <svg width="200" height="100">
-                            <img src="../images/euro.svg" alt="euro" class="euro">
-                          </svg>
-                        </div>
-
-
-                          <div class="avis-moyenne">
-                            <svg width="200" height="100">
-                              <img src="../images/étoile_pleine.svg" alt="etoile pleine"> 
-                            </svg>
-
-                            <svg width="200" height="100">
-                              <img src="../images/etoile_vide.svg" alt="étoile vide">
-                            </svg>
-                          </div>
+                          <h3>Nom de l'épicerie</h3>
+                          <p class="epicerie-texte d-flex align-items-center">Epicerie</h3>
+                                      <div class="gamme-de-prix">
+                                        <img src="img/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="img/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
                       </div>
                 </div>
 
@@ -162,60 +94,40 @@
                       <div class="texte-resultat">
                           <h3>Nom du bar</h3>
                           <p class="bar-texte d-flex align-items-center">Bar</h3>
-                            <div class="gamme-de-prix">
-                            <svg width="200" height="100">
-                              <img src="../images/euro.svg" alt="euro" class="euro">
-                            </svg>
-                            </div>
-
-                            <div class="avis-moyenne">
-                              <svg width="200" height="100">
-                                <img src="../images/étoile_pleine.svg" alt="etoile pleine">                                      
-                              </svg>
-
-                              <svg width="200" height="100">
-                                <img src="../images/etoile_vide.svg" alt="étoile vide">
-                              </svg>
-                            </div>
+                                      <div class="gamme-de-prix">
+                                        <img src="img/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="img/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
                       </div>
-                </div> #}
+                </div>
 
                 <div class="un-resultat d-flex align-items-center">
                     <div class="image-commerce"></div>
                       <div class="texte-resultat">
                           <h3>Nom du bar</h3>
                           <p class="bar-texte d-flex align-items-center">Bar</h3>
-                            <div class="gamme-de-prix">
-                              <svg width="200" height="100">
-                                <img src="../images/euro.svg" alt="euro" class="euro">
-                              </svg>
-                            </div>
-                            <div class="avis-moyenne">
-                              <svg width="200" height="100">
-                                <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
-                              </svg>
-                              <svg width="200" height="100">
-                                <img src="../images/etoile_vide.svg" alt="étoile vide">
-                              </svg>
-                            </div>
+                                      <div class="gamme-de-prix">
+                                        <img src="img/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="img/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
                       </div>
-                    </div>
                 </div>
+                
+            </div>
 
-
-               
-              
               </div>
-            </div> 
-
-           {#  here map #}
-<div class="map col-sm-8" id="map">
-  
+                <div class="map col-sm-8" id="map">
+              </div>
+            </div>
 
           </div>
 
     </main>
-	
+
 	
 
 

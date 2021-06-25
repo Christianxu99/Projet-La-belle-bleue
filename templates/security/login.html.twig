@@ -13,9 +13,7 @@
             {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
             {% if is_granted("ROLE_USER") %}
 
-                <span>
-                    Bonjour {{ app.user.name }} !
-                </span>
+            
                 <a href="{{ path("Profile") }}">Mon profile</a>
                  <a href="{{ path("app_logout") }}">Se déconnecter</a> 
             {% else %}
@@ -30,11 +28,6 @@
 
         </nav>
 
-  <h3> Prévoir API Facebook et Google pour intégrer la connexion via les réseaux sociaux </h3>
-    <h5> // prévoir une page TWIG avec du JS et PHP intégré // </h5>
-
-
- 
 
 <hr>
 

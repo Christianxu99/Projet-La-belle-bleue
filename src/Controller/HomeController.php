@@ -10,13 +10,17 @@ class HomeController extends AbstractController
 {
 
 
+    // function find dans le repository 
+    // requete spéciale pour récupérer les 3 
+
+
     /**
      * @Route("/home", name="home")
      */
     public function index(): Response
     {
         $bestSpots = [
-            ['name' => 'Mon bo resto'],
+            ['name' => 'test'],
             ['name' => 'Un autre resto'],
             ['name' => 'Le dernier de la liste'],
         ];

@@ -2,44 +2,35 @@
 
 namespace App\Form;
 
-use App\Entity\User;
 use App\Entity\Establishment;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class EstablishmentType extends AbstractType
+class EstablishmentRegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('name')
+            ->add('type')
+            ->add('description')
+            ->add('price_range')
             ->add('address')
+            ->add('facebook')
+            ->add('instagram')
+            ->add('twitter')
+            ->add('photo')
             ->add('zipcode')
             ->add('city')
             ->add('phone')
-
-            ->add('type')
-            ->add('photo')
-            ->add('description')
-
-            ->add('specialty_photo')
-            ->add('specialty_description')
-            ->add('specialty_price')
-
-            ->add('product_type')
-            ->add('price_range')
-
-            ->add('opening_hours')
-
-
+            ->add('email')
             ->add('website')
-            ->add('facebook')
-            ->add('twitter')
-            ->add('instagram')
-
+            ->add('longitude')
+            ->add('latitude')
             ->add('has')
             ->add('belong')
+            ->add('id_pro')
         ;
     }
 

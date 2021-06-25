@@ -25,15 +25,24 @@
 
                 <div class="liens-nav">
 
-                    {# <a href="#"><img src="img/ri_earth-line.svg" alt="planete"/> Notre blog</a>
+                    <a href="{{ path("Index") }}">
+                        <svg width="200" height="100">
+                            <img src="../images/ri_earth-line.svg" alt="planete"/>
+                        </svg> Notre Blog
+                    </a>
 
-                    <a href="#"><img src="img/fluent_mail-16-filled.svg" alt="contact"/> Nous contacter</a> #}
+                    <a href="#">
+                        <svg width="200" height="100">
+                            <img src="../images/fluent_mail-16-filled.svg" alt="contact"/>
+                        </svg> Nous contacter
+                    </a>
+                    
                   
-                 <a href="{{ path("Index") }}">
-                     <svg width="200" height="100">
-                        <img src="../images/ant-design_home-filled.svg" alt="home"/>
-                    </svg> Home
-                </a>
+                    <a href="{{ path("Index") }}">
+                        <svg width="200" height="100">
+                            <img src="../images/ant-design_home-filled.svg" alt="home"/>
+                        </svg> Home
+                    </a>
 
 
 
@@ -73,7 +82,7 @@
                 </span>
                 {% endif %}
 
-                <a href="#" class="logo"><img src="img/logo.png" alt="logo"/></a> 
+                <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
 
                 </div>
 

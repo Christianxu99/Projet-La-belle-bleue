@@ -1,0 +1,36 @@
+.tous-avis-dun-commerce {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.notation {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 19px;
+}
+.notation img {
+	width: 7%;
+	margin: 3px;
+}
+.auteur {
+	padding: 1em;
+}
+.tous-les-avis {
+	height: 268px;
+	overflow: auto;
+	padding: 0 13px;
+}
+
+/********************************************************************************************************************************************************
+**************************************************************************** MOBILE *********************************************************************
+********************************************************************************************************************************************************/
+
+@media screen and (max-width: 640px) {
+    .tous-les-avis {
+        height: 106px;
+        overflow: auto;
+        padding: 0 13px;
+    }
+
+}

@@ -1,0 +1,219 @@
+// pop up filtre 
+.popup_filtres {
+	position: absolute;
+	background: white;
+	display: block;
+	top: 19%;
+	padding: 2em;
+	left: 31%;
+	border-radius: 30px;
+	text-align: center;
+	width: 42%;
+	box-shadow: 0px -2px 12px #605454;
+}
+.filtres div {
+	height: 9em;
+}
+.filtres p {
+	width: 10em;
+	text-align: left;
+	position: absolute;
+	margin-top: 3em;
+}
+.filtres label {
+	margin: 1em;
+	background-repeat: no-repeat;
+}
+.image-crois {
+	position: absolute;
+	top: 0;
+	padding: 2em;
+	right: 0;
+}
+// filtre resto 
+input[type="checkbox"]:checked + .bouton.restaurant {
+	background-image: url(../img/resto_selected.svg);
+	height: 88px;
+	width: 71px;
+}
+input[type="checkbox"]:checked + .bouton.restaurant img {
+    display: none;
+}
+// filtre epicerie 
+input[type="checkbox"]:checked + .bouton.epicerie {
+	background-image: url(../img/epicerie_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.epicerie img {
+    display: none;
+}
+// filtre bar 
+input[type="checkbox"]:checked + .bouton.bar {
+	background-image: url(../img/bar_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.bar img {
+    display: none;
+}
+
+// filtre veggie
+input[type="checkbox"]:checked + .bouton.veggie {
+	background-image: url(../img/veggie_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.veggie img {
+    display: none;
+}
+
+// filtre vegan
+input[type="checkbox"]:checked + .bouton.vegan {
+	background-image: url(../img/vegan_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.vegan img {
+    display: none;
+}
+
+// filtre bio
+input[type="checkbox"]:checked + .bouton.bio {
+	background-image: url(../img/bio_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.bio img {
+    display: none;
+}
+
+// filtre local
+input[type="checkbox"]:checked + .bouton.local {
+	background-image: url(../img/local_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.local img {
+    display: none;
+}
+
+// filtre vrac
+input[type="checkbox"]:checked + .bouton.vrac {
+	background-image: url(../img/vrac_selected.svg);
+	height: 88px;
+	width: 60px;
+}
+input[type="checkbox"]:checked + .bouton.vrac img {
+    display: none;
+}
+
+// image des euros
+.un_euro img, .deux_euros img, .trois_euros img, .quatre_euros img {
+	width: auto;
+	height: 60px;
+}
+
+// filtre un euro
+input[type="checkbox"]:checked + .bouton.un_euro {
+	background-image: url(../img/un_euro_selected.svg); 
+	width: 60px;
+	height: 4em;
+}
+
+input[type="checkbox"]:checked + .bouton.un_euro img {
+    display: none;
+}
+
+// filtre deux euros
+.bouton.deux_euros {width: 74px;}
+
+input[type="checkbox"]:checked + .bouton.deux_euros {
+	background-image: url(../img/deux_euros_selected.svg); 
+	width: 74px;
+	height: 4em;
+}
+
+input[type="checkbox"]:checked + .bouton.deux_euros img {
+    display: none;
+}
+
+// filtre trois euros
+.bouton.trois_euros {width: 80px;}
+
+input[type="checkbox"]:checked + .bouton.trois_euros {
+	background-image: url(../img/trois_euros_selected.svg); 
+	width: 80px;
+	height: 4em;
+}
+
+input[type="checkbox"]:checked + .bouton.trois_euros img {
+    display: none;
+}
+
+// filtre quatre euros
+.bouton.quatre_euros {width: 93px;}
+
+input[type="checkbox"]:checked + .bouton.quatre_euros {
+	background-image: url(../img/quatre_euros_selected.svg); 
+	width: 93px;
+	height: 4em;
+}
+input[type="checkbox"]:checked + .bouton.quatre_euros img {
+    display: none;
+}
+
+/********************************************************************************************************************************************************
+**************************************************************************** MOBILE *********************************************************************
+********************************************************************************************************************************************************/
+
+@media screen and (max-width: 640px) {
+	.popup_filtres {
+		position: absolute;
+		width: 100%;
+		left: 0px;
+		height: 100%;
+		top: 21em;
+		z-index: 2;
+	}
+	.les-resultats {
+		height: 344px;
+		z-index: 1;
+		position: relative;
+	}
+	.image-crois {
+		position: absolute;
+		top: 0;
+		padding: 1em;
+		right: 0;
+	}
+	.filtres p {
+		width: auto;
+		text-align: center;
+		position: relative;
+		margin: 0;
+	}
+	.filtres div {
+		height: auto;
+	}
+	.filtres_produits div, .filtres_etablissement div {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		padding: 11px;
+		margin: 0 auto;
+		height: auto;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.filtres label {
+		margin: 11px;
+		background-repeat: no-repeat;
+	}
+	.filtres_prix {
+		margin-left: -25px;
+	}
+	.filtres_prix label {
+		margin-right: 1px;
+	}
+}

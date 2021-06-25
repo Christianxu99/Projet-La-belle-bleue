@@ -1,0 +1,47 @@
+.menu-dun-resto {
+	height: 268px;
+	overflow: auto;
+	padding: 0 13px;
+}
+.image-plat {
+	width: 6em;
+	height: 100px;
+	overflow: hidden;
+	margin-right: 10px;
+	border-radius: 10px;
+}
+.image-plat img {
+	width: 105px;
+}
+.un-plat-dun-resto {
+	margin: 1em 0;
+}
+.un-plat {
+	height: 100px;
+	overflow: hidden;
+	/* display: -webkit-box; */
+	/* display: -ms-flexbox; */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	border: 1px solid #2b9780;
+	padding: 14px;
+	border-radius: 20px;
+	flex-direction: column;
+}
+.desc {
+	color: $green;
+}
+
+/********************************************************************************************************************************************************
+**************************************************************************** MOBILE *********************************************************************
+********************************************************************************************************************************************************/
+
+@media screen and (max-width: 640px) {
+    .menu-dun-resto {
+        height: 187px;
+        overflow: auto;
+        padding: 0 13px;
+    }
+
+}

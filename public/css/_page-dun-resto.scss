@@ -1,0 +1,72 @@
+/******************************** COULEURS ********************************/
+
+$white: rgb(255, 255, 255);
+$green:#2b9780;
+$blue:#1C9DC6;
+$corps:rgb(59, 59, 59); 
+$shadow: 0px -2px 12px rgb(204, 204, 204);
+$black:rgb(82, 82, 82);
+
+
+.filtres-du-commerce img {
+	height: 69px;
+	margin: 1em;
+	width: 64px;
+}
+.block-resultat a {
+	color: $blue;
+}
+.block-resultat a:hover {
+	color: $green;
+}
+.nav-fiche-resto {
+	background: #1C9DC6;
+	width: 117%;
+	position: relative;
+	left: -32px;
+	margin: 1em 0;
+}
+a.nav-link.active {
+	border-bottom: 2px solid;
+	padding: 0;
+	margin-top: 8px;
+}
+.nav-fiche-resto a {
+    color:white;
+}
+.nav-fiche-resto a:hover {
+	color: #0e1415;
+}
+
+.photos-commerces {
+	height: 11em;
+	overflow: hidden;
+}
+.photo-commerce {
+	margin-top: -12em;
+}
+.etablissement-ouvert {
+	color: $blue;
+}
+.horaires-du-commerce {
+	padding: 20px 0;
+	color:$corps;
+}
+.etablissement-ouvert li {
+	list-style: none;
+	display: flex;
+}
+.pull-right {
+	padding-top: 3px;
+	text-align: right;
+	width: 94%;
+	margin-right: 1em;
+}
+.etablissement-ouvert p, .mail-du-commerce a, .tel-du-commerce a, .site-du-commerce a {
+	padding: 1em;
+	margin: 0;
+}
+.rs-du-commerce {
+	width: 48%;
+	margin: 2em auto;
+}

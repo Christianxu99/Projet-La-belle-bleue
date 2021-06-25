@@ -1,7 +1,11 @@
 @import'header';
 @import'footer';
 @import'page-filtres';
-
+@import'page-dun-resto';
+@import 'page-dun-resto-menu';
+@import 'page-dun-resto-avis';
+@import'page-donner-avis';
+@import'profil-part';
 /******************************** COULEURS ********************************/
 
 $white: rgb(255, 255, 255);
@@ -18,6 +22,11 @@ font-family: 'Lato', sans-serif;
 background-image: url(../images/background.png);
 color:$corps;
 }
+
+.fond-home {
+	background-image: url(../images/papier-kraft.png);
+	padding: 3em;
+}
 /******************************** TITRE H1 H2 H3 ********************************/
 h1, h2, h3 {
 font-family: 'Economica', sans-serif;
@@ -25,11 +34,34 @@ text-transform: uppercase;
 color:$blue;
 letter-spacing: 1px;
 }
+.fond-home h1 {
+	color: #043A5B;
+	text-align: center;
+	font-weight: 600;
+	padding: 17px 0px;
+}
 h3 {
 font-family: 'Lato', sans-serif;
 font-size: 1rem;
 }
 
+// bouton bleu
+.bouton_bleu {
+	background-image: url(../images/bouton_bleu.svg);
+	background-color: #1C9DC6;
+	width: 250px;
+	padding: 1em;
+	border: 0;
+	border-radius: 30px;
+	margin: 10px auto;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: 'Economica', sans-serif;
+}
+.bouton_bleu:hover {
+	background-color: #2b9780;
+}
 /******************************** CONTENU ********************************/
 .container.main {
 background:$white;
@@ -67,6 +99,10 @@ border-radius: 1em;
 	color:$white;
 	background:$black;
 }
+.btn.filtrer img {
+	width: 26%;
+	height: auto;
+}
 /******************************** BLOC RESULTAT *****************************/
 .block-resultat {
 	background:$white;
@@ -77,7 +113,7 @@ border-radius: 1em;
 }
 /****** Les résultats ******/
 .les-resultats {
-	height: 30em;
+	height: 27em;
 	overflow: auto;
 }
 
@@ -97,7 +133,7 @@ border-radius: 1em;
 }
 /****** Image commerce ******/
 .image-commerce {
-background-image: url(../img/restaurant.jpg);
+background-image: url(../images/restaurant.jpg);
 width: 10em;
 background-size: cover;
 background-position: center;
@@ -110,7 +146,7 @@ margin: 0;
 }
 .resto-texte::before {
 content: "";
-background-image: url(../img/icon-resto.svg);
+background-image: url(../images/icon-resto.svg);
 width: 19px;
 height: 20px;
 display: block;
@@ -122,7 +158,7 @@ margin: 0;
 }
 .epicerie-texte::before {
 content: "";
-background-image: url(../img/epicerie.svg);
+background-image: url(../images/epicerie.svg);
 width: 21px;
 height: 20px;
 display: block;
@@ -135,7 +171,7 @@ margin: 0;
 }
 .bar-texte::before {
 content: "";
-background-image: url(../img/icon_bar.svg);
+background-image: url(../images/icon_bar.svg);
 width: 19px;
 height: 20px;
 display: block;

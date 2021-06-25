@@ -20,11 +20,6 @@ import {SearchAddress} from "./components/SearchAdress";
 
 
 
-
-
-
-
-
 function Search(){
 
     return(
@@ -32,11 +27,8 @@ function Search(){
 
         <div style={{ width:"30rem"}}>
 
-        <SearchEstablishment/>
-        <SearchAddress/>
-    
-    
        
+        <SearchAddress/>
 
 
         </div>
@@ -44,6 +36,24 @@ function Search(){
         // on aurait pu inclure un composant comme on l'a fait pendant le cours et le charger ici <Home /> par exemple
     )
 }
+
+
+function NavEstablishment(){
+
+
+     return (
+     
+     
+      <div style={{ width:"30rem"}}>
+     
+     <SearchEstablishment/>
+     
+      </div>
+     
+     )
+    
+}
+
 
 
 function MapRender(){
@@ -55,16 +65,32 @@ function MapRender(){
     )
 }
 
+
+
+
 if(document.getElementById("search"))
 {
 
 ReactDOM.render(<Search />, document.getElementById("search")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
 }
 
+
+
+
+if(document.getElementById("searchestablishment"))
+{
+
+ReactDOM.render(<NavEstablishment />, document.getElementById("searchestablishment")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+}
+
+
+
+
+
 if(document.getElementById("map"))
 {
 
-    ReactDOM.render(<MapRender />, document.getElementById("map")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+ReactDOM.render(<MapRender />, document.getElementById("map")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
 }
 
 

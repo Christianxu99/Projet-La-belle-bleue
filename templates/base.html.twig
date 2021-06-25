@@ -24,12 +24,20 @@
                 <!-- Barre de navigation -->
 
                 <div class="liens-nav">
+                    <a href="{{ path("Index") }}">
+                        <svg width="200" height="100">
+                            <img src="../images/ant-design_home-filled.svg" alt="home"/>
+                        </svg> Home
+                    </a>
 
                     <a href="{{ path("Index") }}">
                         <svg width="200" height="100">
                             <img src="../images/ri_earth-line.svg" alt="planete"/>
                         </svg> Notre Blog
                     </a>
+
+                    <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
+
 
                     <a href="#">
                         <svg width="200" height="100">
@@ -38,11 +46,6 @@
                     </a>
                     
                   
-                    <a href="{{ path("Index") }}">
-                        <svg width="200" height="100">
-                            <img src="../images/ant-design_home-filled.svg" alt="home"/>
-                        </svg> Home
-                    </a>
 
 
 
@@ -62,7 +65,9 @@
                         <img src="../images/profile_picture.svg" alt="inscription"/>
                     </svg> Se déconnecter
                 </a> 
-            
+
+                <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
+ 
             
                 {% else %}
 			    <span>
@@ -82,7 +87,6 @@
                 </span>
                 {% endif %}
 
-                <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
 
                 </div>
 

@@ -56,5 +56,5 @@ export const Map = () => {
   }, [mapRef]);
 
 
-  return <div className="map" ref={mapRef} style={{ height: "300px" }} />;
+  return <div className="map" ref={mapRef} style={{ height: "300px"}} />;
 };

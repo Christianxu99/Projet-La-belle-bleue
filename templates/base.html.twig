@@ -20,32 +20,24 @@
                 <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
                 <label for="menu-checkbox" class="menu-toggle">≡</label>
                 <label for="menu-checkbox" class="menu-croix">x</label>
+
                 
                 <!-- Barre de navigation -->
-
                 <div class="liens-nav">
                     <a href="{{ path("Index") }}">
-                        <svg width="200" height="100">
+                        <svg width="100" height="50">
                             <img src="../images/ant-design_home-filled.svg" alt="home"/>
                         </svg> Home
                     </a>
 
                     <a href="{{ path("Index") }}">
-                        <svg width="200" height="100">
+                        <svg width="100" height="50">
                             <img src="../images/ri_earth-line.svg" alt="planete"/>
                         </svg> Notre Blog
                     </a>
 
                     <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
 
-
-                    <a href="#">
-                        <svg width="200" height="100">
-                            <img src="../images/fluent_mail-16-filled.svg" alt="contact"/>
-                        </svg> Nous contacter
-                    </a>
-                    
-                  
 
 
 
@@ -55,47 +47,46 @@
 
 
                 <a href="{{ path("Profile") }}">
-                     <svg width="200" height="100">
+                     <svg width="100" height="50">
                         <img src="../images/profile_picture.svg" alt="inscription"/>
                     </svg> Mon profil
                 </a>
 
                 <a href="{{ path("app_logout") }}">
-                     <svg width="200" height="100">
+                     <svg width="100" height="50">
                         <img src="../images/profile_picture.svg" alt="inscription"/>
-                    </svg> Se déconnecter
+                    </svg> Me déconnecter
                 </a> 
 
-                <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
  
             
                 {% else %}
 			    <span>
                     <a href="{{ path("Login") }}">
-                        <svg width="200" height="100">
-                            <img src="../images/profile_picture.svg" alt="inscription"/>
-                        </svg> Se connecter
+                        <svg width="100" height="50">
+                            <img src="../images/profile_picture.svg" alt="connexion"/>
+                        </svg> Me connecter
                     </a>
                 </span>
 
                 <span>
                     <a href="{{ path("RegistrationController") }}">
-                        <svg width="200" height="100">
+                        <svg width="100" height="50">
                             <img src="../images/profile_picture.svg" alt="inscription"/>
                         </svg> M'inscrire
                     </a>
                 </span>
                 {% endif %}
+                </nav>
 
 
                 </div>
 
-            </nav>
 
                 <!-- Logo Mobile -->
-                <a href="#" class="logo-mobile"><img src="img/logo.png" alt="logo"/></a> 
-        </div>
-        
+                {# <a href="#" class="logo-mobile"><img src="images/logo.png" alt="logo"/></a>  #}
+                </div>
+            </nav> 
     </header>
 
 

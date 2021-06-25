@@ -36,7 +36,6 @@ nav {
 
 nav a {
   color: white;
-  padding: 0 2em;
   text-decoration: none;
   height: 2em;
   display: block;
@@ -638,12 +637,12 @@ a.nav-link.active {
 /******************************** BODY ********************************/
 body {
   font-family: 'Lato', sans-serif;
-  background-image: url(../img/background.png);
+  background-image: url(../images/background.png);
   color: #3b3b3b;
 }
 
 .fond-home {
-  background-image: url(../img/papier-kraft.png);
+  background-image: url(../images/papier-kraft.png);
   padding: 3em;
 }
 
@@ -668,7 +667,7 @@ h3 {
 }
 
 .bouton_bleu {
-  background-image: url(../img/bouton_bleu.svg);
+  background-image: url(../images/bouton_bleu.svg);
   background-color: #1C9DC6;
   width: 250px;
   padding: 1em;
@@ -766,7 +765,7 @@ h3 {
 
 /****** Image commerce ******/
 .image-commerce {
-  background-image: url(../img/restaurant.jpg);
+  background-image: url(../images/restaurant.jpg);
   width: 10em;
   background-size: cover;
   background-position: center;
@@ -781,7 +780,7 @@ h3 {
 
 .resto-texte::before {
   content: "";
-  background-image: url(../img/icon-resto.svg);
+  background-image: url(../images/icon-resto.svg);
   width: 19px;
   height: 20px;
   display: block;

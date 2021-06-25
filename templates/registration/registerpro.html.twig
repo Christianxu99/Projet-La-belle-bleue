@@ -11,7 +11,7 @@
 
 
       {{ form_start(registrationForm) }}
-    {#     {{ form_row(establishmentType.name) }} #}
+
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
@@ -21,11 +21,15 @@
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
 
-   {# 
+   
+    {{ form_start(establishmentType) }}
+
         {{ form_row(establishmentType.address) }}
         {{ form_row(establishmentType.zipcode) }}
         {{ form_row(establishmentType.city) }}
-        {{ form_row(establishmentType.phone) }} #}
+        {{ form_row(establishmentType.phone) }} 
+
+    {{ form_end(establishmentType) }}
 
 
 

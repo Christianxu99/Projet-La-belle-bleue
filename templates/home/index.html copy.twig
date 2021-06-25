@@ -83,6 +83,8 @@
                       <div class="image-commerce"></div>
                         <div class="texte-resultat">
                           <h3>{{ spot['name'] }}</h3>
+                          <h3>{{ spot['type'] }}</h3>
+                          
                           <p class="resto-texte d-flex align-items-center">Restaurant</h3>
                             <div class="gamme-de-prix">
                               <svg width="200" height="100"> 
@@ -90,6 +92,7 @@
                               </svg>
                             </div>
                             <div class="avis-moyenne">
+                              <h3>{{ spot['price_range'] }}</h3>
                               <svg width="200" height="100">
                                   <img src="../images/étoile_pleine.svg" alt="etoile pleine"> 
                                   <img src="../images/etoile_vide.svg" alt="étoile vide">

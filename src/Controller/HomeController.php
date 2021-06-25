@@ -20,9 +20,9 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         $bestSpots = [
-            ['name' => 'test'],
-            ['name' => 'Un autre resto'],
-            ['name' => 'Le dernier de la liste'],
+            ['name' => ''],
+            ['type' => ''],
+            ['price_range' => ''],
         ];
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',

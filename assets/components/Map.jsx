@@ -50,11 +50,15 @@ export const Map = () => {
     setHMapContainer(hMap); //je stocke dans un état la map
     // hMap && addMarkersToMap(hMap);
 
+   
+
+    
     return () => {
       hMap.dispose();
     };
   }, [mapRef]);
 
 
-  return <div className="map" ref={mapRef} style={{ height: "300px"}} />;
+  return <div className="map" ref={mapRef} style={{ height: "560px"}} />;
+
 };

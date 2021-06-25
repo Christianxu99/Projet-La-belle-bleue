@@ -75,16 +75,11 @@ ReactDOM.render(<Search />, document.getElementById("search")); // l'id root ici
 }
 
 
-
-
 if(document.getElementById("searchestablishment"))
 {
 
 ReactDOM.render(<NavEstablishment />, document.getElementById("searchestablishment")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
 }
-
-
-
 
 
 if(document.getElementById("map"))

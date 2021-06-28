@@ -18,28 +18,25 @@ export const HomePage = () => {
     console.log('restaurants', restaurants);
 
     return (
-  <Fragment>
+
+
+     <Fragment>
+
         <div className="container fond-home">
         <h1>Localisez les bonnes adresses de l’alimentation bio, veg’ et locale autour de vous !</h1>
               
         <div className="container d-flex justify-content-between">
 
         <div className="container d-flex justify-content-between" >
-          <LocationSearchInput setUserPos={setUserPos} setZoom={setZoom} /> 
+             <LocationSearchInput setUserPos={setUserPos} setZoom={setZoom} /> 
         </div>
 
-           
-
-
-
-            
             <button type="button" className="btn filtrer"> <img src="images/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
+
         </div>
 
 
        <div className="container home">
-
-
 
                 <div className="col-md-6 col-lg-8" > 
                   <Map userPos={userPos} zoom={zoom} restaurants={restaurants} /> 
@@ -50,9 +47,8 @@ export const HomePage = () => {
 
         </div>
 
-    
 
-        </Fragment>
+     </Fragment>
   
     )
 }

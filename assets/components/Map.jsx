@@ -13,7 +13,7 @@ const AnyReactComponent = ({ text, isPositionPicto = false }) => (
 
 export const Map = ({ userPos, zoom, restaurants }) => {
   return (
-    <div style={{ height: '560px', width: '100vh' }}>
+    <div style={{ height: '560px', width: '1200px' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: API_KEY }}
         defaultCenter={{ lat: 48.866667, lng: 2.333333 }}

@@ -20,7 +20,7 @@ class EstablishmentRegistrationController extends AbstractController
     }
 }
 
-
+/* 
 public function registerEstablishment(Request $request): Response
 {
     $form = $this->createForm(EstablishmentRegistrationType::class, $user);
@@ -35,3 +35,4 @@ public function registerEstablishment(Request $request): Response
             )
         );
 
+ */

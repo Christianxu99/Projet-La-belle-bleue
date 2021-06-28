@@ -15,7 +15,7 @@ class HomeController extends AbstractController
 
 
     /**
-     * @Route("/home", name="home")
+     * @Route("/{reactRouting}", name="home", defaults={"reactRouting": null})
      */
     public function index(): Response
     {

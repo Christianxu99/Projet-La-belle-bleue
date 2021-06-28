@@ -20,6 +20,9 @@ use Psr\Log\LoggerInterface;
 class EstablishmentController extends AbstractController
 {
 
+
+    
+
     /**
      * @Route("/api/listplace", name="livre_index", methods={"GET"})
      */
@@ -32,11 +35,16 @@ class EstablishmentController extends AbstractController
   
           foreach($places as $row){
   
-              $tabResult[$row->getName() ] = array('lat' => $row->getLatitude(), 'lng' => $row->getLongitude());
+              $tabResult[] = array('lat' => $row->getLatitude(), 'lng' => $row->getLongitude(), 'name'=>$row->getName());
           }
-  
+
+ /*  'link' => '/etblissement/1' */
+
+
+
           return new JsonResponse($tabResult);
       }
+
     
     /**
      * @Route("/api/search/{query}", methods={"GET"})

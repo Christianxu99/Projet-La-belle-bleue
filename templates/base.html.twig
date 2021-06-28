@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaBelle Bleue</title>
-      <!-- Bootstrap CSS -->
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
-      <link rel="stylesheet" href="css/style.css">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css/style.css">
+        <script
+            type="text/javascript"
+            src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+        ></script>
 </head>
 <body>
 
@@ -88,21 +96,16 @@
                 </div>
             </nav> 
     </header>
-
-
-        {% block body %} 
-        CECI SERA LE BODY DE LA PAGE
-        {% endblock %}
-
+    <div id="root"></div>
     <footer>
         <a href="#">Besoin d'aide ?</a>
         <a href="#">Voir nos CGU/CGV</a>
         <span>LaBelle Bleue © 2021</span>
     </footer>
-
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtE3RhcosZj3YomIt1xb0LMQa0ugDDer0&libraries=places"></script>
+        <script type="text/javascript" src="build/app.js" ></script>
+    {% endblock %}
     </body>
 </html>

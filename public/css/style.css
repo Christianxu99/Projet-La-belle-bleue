@@ -773,6 +773,11 @@ h3 {
   height: 8em;
 }
 
+.vignette-etablissement{
+  height: 8vw;
+  width: 8vw;
+  object-fit: cover;
+}
 /****** Si c'est un restaurant ******/
 .resto-texte {
   margin: 0;

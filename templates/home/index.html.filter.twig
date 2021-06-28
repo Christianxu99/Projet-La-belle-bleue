@@ -1,0 +1,231 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LaBelleBleue{% endblock %}
+
+
+{% block body %}
+
+{% block javascripts %}
+
+    {{ parent()}}
+      <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  ></script>
+   <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-ui.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+  ></script>
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+{% endblock %}
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaBelle Bleue</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
+      <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+    <main>
+      <div class="container fond-home">
+        <h1>Localisez les bonnes adresses de l’alimentation bio, veg’ et locale autour de vous !</h1>
+      
+        <div class="container d-flex justify-content-between">
+            <!-- Barre de recherche  -->
+            <form class="barre-recherche">
+            <input class="adresse form-control me-2" type="search" placeholder="Votre adresse" aria-label="Search">
+            <button class="btn localisation"><img src="../images/localisation.svg" alt="localisation" class="localisation"></button>
+            </form>
+
+            <!-- Bouton filtrer -->
+            <button type="button" class="btn filtrer"> <img src="../images/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
+        </div>
+
+
+        <div class="container home">
+
+            <div class="row home">
+              <div class="block-resultat col-sm-4">
+                    <div class="titre-resultat text-center">
+                        <h2>Notre sélection</h2>
+                        <p>Les mieux notés près de chez vous</p>
+                    </div>
+
+                    <div class="les-resultats">
+
+                  <div class="un-resultat d-flex align-items-center">
+                      <div class="image-commerce"></div>
+                        <div class="texte-resultat">
+                            <h3>Nom du restaurant</h3>
+                            <p class="resto-texte d-flex align-items-center">Restaurant</h3>
+                                        <div class="gamme-de-prix">
+                                            <img src="../images/euro.svg" alt="euro" class="euro">
+                                        </div>
+                                        <div class="avis-moyenne">
+                                            <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                        </div>
+                        </div>
+                  </div>
+
+                  <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                          <h3>Nom de l'épicerie</h3>
+                          <p class="epicerie-texte d-flex align-items-center">Epicerie</h3>
+                                      <div class="gamme-de-prix">
+                                        <img src="../images/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
+                      </div>
+                </div>
+
+                <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                          <h3>Nom du bar</h3>
+                          <p class="bar-texte d-flex align-items-center">Bar</h3>
+                                      <div class="gamme-de-prix">
+                                        <img src="../images/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
+                      </div>
+                </div>
+
+                <div class="un-resultat d-flex align-items-center">
+                    <div class="image-commerce"></div>
+                      <div class="texte-resultat">
+                          <h3>Nom du bar</h3>
+                          <p class="bar-texte d-flex align-items-center">Bar</h3>
+                                      <div class="gamme-de-prix">
+                                        <img src="../images/euro.svg" alt="euro" class="euro">
+                                      </div>
+                                      <div class="avis-moyenne">
+                                            <img src="../images/étoile_pleine.svg" alt="etoile pleine"> <img src="img/etoile_vide.svg" alt="étoile vide">
+                                      </div>
+                      </div>
+                </div>
+                
+            </div>
+
+              </div>
+              <div class="map col-sm-8">
+                <iframe scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=2.2182083129882817%2C48.80878537738899%2C2.432613372802735%2C48.9089620134408&amp;layer=mapnik" style="border: 0" width="100%" height="100%" frameborder="0"></iframe>
+              </div>
+            </div>
+
+            <div class="popup_filtres">
+
+                <img src="../images/croix.png" alt="fermer" class="image-crois">
+
+                <h2>Que recherchez-vous ?</h2>
+                <p>Sélectionnez un ou plusieurs filtres</p>
+                <form action="" method="get" class="filtres">
+
+                    <div class="filtres_etablissement">
+                    <p>Etablissement</p>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="bouton restaurant" for="btncheck1"><img src="../images/filtre_restaurant.svg" alt="restautant"></label>
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="bouton epicerie" for="btncheck2"><img src="../images/filtre_epicerie.svg" alt="epicerie"></label>
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="bouton bar" for="btncheck3"><img src="../images/filtre_bar.svg" alt="bar"></label>
+                  </div>
+                </div>
+
+                <div class="filtres_produits">
+                    <p>Produits</p>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                    <label class="bouton veggie" for="btncheck4"><img src="../images/veggie.svg" alt="veggie"></label>
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+                    <label class="bouton vegan" for="btncheck5"><img src="../images/vegan.svg" alt="vegan"></label>
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+                    <label class="bouton vrac" for="btncheck6"><img src="../images/vrac.svg" alt="vrac"></label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+                    <label class="bouton bio" for="btncheck7"><img src="../images/bio.svg" alt="bio"></label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+                    <label class="bouton local" for="btncheck8"><img src="../images/Local.svg" alt="local"></label>
+
+                  </div>
+                </div>
+
+                <div class="filtres_prix">
+                    <p>Gamme de prix</p>
+                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                    <label class="bouton un_euro" for="btncheck9"><img src="../images/un_euro.svg" alt="un euro"></label> 
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                    <label class="bouton deux_euros" for="btncheck10"><img src="../images/deux_euros.svg" alt="deux euros"></label> 
+                  
+                    <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                    <label class="bouton trois_euros" for="btncheck11"><img src="../images/trois_euros.svg" alt="trois euros"></label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                    <label class="bouton quatre_euros" for="btncheck12"><img src="../images/quatre_euros.svg" alt="quatre euros"></label>
+
+                  </div>
+                </div>
+
+                <button type="submit" class="bouton_bleu">Filtrer</button>
+
+                </form>
+            </div>
+
+          </div>
+        </div>
+
+    </main>
+
+ 
+    <footer>
+        <a href="#">Besoin d'aide ?</a>
+        <a href="#">Voir nos CGU/CGV</a>
+        <span>LaBelle Bleue © 2021</span>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+	
+
+
+{% endblock %} 

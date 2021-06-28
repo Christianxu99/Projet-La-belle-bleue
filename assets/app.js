@@ -8,15 +8,15 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-import React from "react";
+import React, { Fragment } from "react";
 
 import ReactDOM from "react-dom";
 
-import {SearchEstablishment} from "./components/Nav";
 
 import {Map} from "./components/Map";
 
-import {SearchAddress} from "./components/SearchAdress";
+import {LocationSearchInput} from "./components/LocationSearchInput";
+import { HomePage } from './pages/HomePage';
 
 
 
@@ -28,7 +28,7 @@ function Search(){
         <div style={{ width:"30rem"}}>
 
        
-        <SearchAddress/>
+        <LocationSearchInput/>
 
 
         </div>
@@ -38,34 +38,40 @@ function Search(){
 }
 
 
-function NavEstablishment(){
 
-
-     return (
-     
-     
-      <div style={{ width:"30rem"}}>
-     
-     <SearchEstablishment/>
-     
-      </div>
-     
-     )
-    
-}
-
-
-
-function MapRender(){
+function Gmap(){
 
     return(
+       
 
-      <Map/>   
+        <Map/>   
+
+       
+     
 
     )
 }
 
 
+function Home(){
+
+    return(
+       
+
+        <HomePage/>   
+
+       
+     
+
+    )
+}
+
+
+if(document.getElementById("map"))
+{
+
+ReactDOM.render(<Gmap />, document.getElementById("map")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+}
 
 
 if(document.getElementById("search"))
@@ -75,18 +81,13 @@ ReactDOM.render(<Search />, document.getElementById("search")); // l'id root ici
 }
 
 
-if(document.getElementById("searchestablishment"))
+if(document.getElementById("homepage"))
 {
 
-ReactDOM.render(<NavEstablishment />, document.getElementById("searchestablishment")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
+ReactDOM.render(<Home />, document.getElementById("homepage")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
 }
 
 
-if(document.getElementById("map"))
-{
-
-ReactDOM.render(<MapRender />, document.getElementById("map")); // l'id root ici sera créé dans un <div id="root"></div> dans n'importe quel template twig que vous choisissez.
-}
 
 
 

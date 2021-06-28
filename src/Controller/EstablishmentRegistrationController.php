@@ -21,17 +21,17 @@ class EstablishmentRegistrationController extends AbstractController
 }
 
 
-public function registerEstablishment(Request $request): Response
-{
-    $form = $this->createForm(EstablishmentRegistrationType::class, $user);
-    $form->handleRequest($request);
+// public function registerEstablishment(Request $request): Response
+// {
+//     $form = $this->createForm(EstablishmentRegistrationType::class, $user);
+//     $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
-        // encode the plain password
-        $user->setPassword(
-            $passwordEncoder->encodePassword(
-                $user,
-                $form->get('plainPassword')->getData()
-            )
-        );
+//     if ($form->isSubmitted() && $form->isValid()) {
+//         // encode the plain password
+//         $user->setPassword(
+//             $passwordEncoder->encodePassword(
+//                 $user,
+//                 $form->get('plainPassword')->getData()
+//             )
+//         );
 

@@ -38,7 +38,13 @@ class Establishment
     /**
      * @ORM\Column(type="string")
      */
-    private $price_range;
+    private $price;
+
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $note;
 
 
      /**
@@ -179,14 +185,28 @@ class Establishment
         return $this;
     }
 
-    public function getPriceRange(): ?string
+    public function getPrice(): ?string
     {
-        return $this->price_range;
+        return $this->price;
     }
 
-    public function setPriceRange(string $price_range): self
+    public function setPrice(string $price): self
     {
-        $this->price_range = $price_range;
+        $this->price_range = $price;
+
+        return $this;
+    }
+
+
+
+    public function note(): ?string
+    {
+        return $this->note;
+    }
+
+    public function setNote(string $note): self
+    {
+        $this->note = $note;
 
         return $this;
     }

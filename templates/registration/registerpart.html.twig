@@ -9,6 +9,94 @@
     {% endfor %}
 
 
+    <!DOCTYPE html>
+<html lang="fr">
+
+<body>
+  
+    <main>
+<div class="card_inscriptionpart1">
+
+
+  
+    <h1>VOS IDENTIFIANTS</h1>
+    <form>
+
+    <div class="champs-inscri">
+
+      
+        <div>
+            <input id="customer-name" type="text" name="name" placeholder="Nom ou Pseudo"required>
+        </div>
+
+         <div>
+          <input id="customer-email" type="text" name="email" placeholder="Adresse e-mail" required>
+        </div>
+
+
+         <div>
+            <input id="customer-email-confirm" type="text" name="email-confirm" placeholder="Confirmez votre e-mail"required>
+        </div>
+
+         <div>
+            <input id="customer-pw" type="password" name="password" placeholder="Mot de passe" required>
+        </div>
+
+
+         <div>
+            <input id="customer-pw-confirm" type="password" name="password" placeholder="Confirmez votre mot de passe" required>
+        </div>
+      
+    </div>
+      
+  
+    <h1 class="inscription_patt_1_secondtitle">VOS CENTRES D'INTÉRÊTS</h1>
+    
+    <div class=" filtres_produits">
+  
+  <div class="btn-group inscription_part_1" role="group" aria-label="Basic checkbox toggle button group">
+      <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+      <label class="bouton veggie" for="btncheck4"><img src="../images/veggie.svg" alt="veggie"></label>
+    
+      <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+      <label class="bouton vegan" for="btncheck5"><img src="../images/vegan.svg" alt="vegan"></label>
+    
+      <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+      <label class="bouton vrac" for="btncheck6"><img src="../images/vrac.svg" alt="vrac"></label>
+
+      <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+      <label class="bouton bio" for="btncheck7"><img src="../images/bio.svg" alt="bio"></label>
+
+      <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+      <label class="bouton local" for="btncheck8"><img src="../images/Local.svg" alt="local"></label>
+
+    </div>
+  </div>
+
+ <div class="CGU_inscriptionpart1">
+  <input type="checkbox" class="cgu_checkbox_inscriptionpart1" id="accept_cgu" autocomplete="off">
+  <label for="cgu">J'ai lu et j'accepte les conditions générales</label>
+ </div>
+ 
+  
+
+  <button type="submit" class="bouton_bleu">S'INSCRIRE</button>
+
+</form>
+ 
+    
+</main>
+
+      
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+{# 
 
       {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.name) }}
@@ -20,7 +108,7 @@
         {{ form_row(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {{ form_end(registrationForm) }} #}
 
 
 

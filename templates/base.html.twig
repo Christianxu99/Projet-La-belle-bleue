@@ -100,9 +100,12 @@
         <span>LaBelle Bleue © 2021</span>
     </footer>
 
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtE3RhcosZj3YomIt1xb0LMQa0ugDDer0&libraries=places"</script>
+        <script type="text/javascript" src="build/app.js" ></script>
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+
     </body>
 </html>

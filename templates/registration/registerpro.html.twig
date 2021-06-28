@@ -8,10 +8,467 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
+    <!DOCTYPE html>
+<html lang="fr">
+
+<body>
+
+    
+    <main>
+  <div class="inscription_card_pro">
+    <div class="row">
+    <div class="col">
+      <h2>inscription</h2>
+      <div class="inscription_1_deja_client">
+        <p>Vous avez déjà un compte?</p>
+        <a href="#">Se connecter</a>
+      </div>  
+
+      <!-- MENU ACCORDEON  -->
+
+      <!-- Vos identifiants  -->
+      <div class="tabs">
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck1">
+          <label class="tab-label" for="chck1">Vos identifiants</label>
+          <div class="tab-content">
+          <form action="identifiants" method="post">
+            <div>
+                <input class="field form-control me-2" type="search" placeholder="Nom ou pseudo" aria-label="name">
+                <input class="field form-control me-2" type="search" placeholder="Adresse e-mail" aria-label="mail">
+                <input class="field form-control me-2" type="search" placeholder="Confirmer l'adresse e-mail" aria-label="confirm_mail">
+                <input class="field form-control me-2" type="search" placeholder="Mot de passe" aria-label="motdepasse">
+                <input class="field form-control me-2" type="search" placeholder="Confirmer votre mot de passe" aria-label="confirm_mdp">
+            </div>
+            <div>
+              <input type="checkbox" id="conditions" name="drone" value="conditions">
+              <label class="label_field" for="conditions">J’ai lu et j’accepte les conditions générales</label>
+            </div>
+            <div>
+              <button type="submit" class="bouton_bleu_inscription">S'inscrire</button>
+            </div>
+          </div>
+        </form>
+        </div>
+
+        <!-- Votre établissement -->
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck2">
+          <label class="tab-label" for="chck2">Votre établissement</label>
+          <div class="tab-content">
+            <form action="identifiants" method="post">
+              <div>
+                  <input class="field form-control me-2" type="search" placeholder="Nom de votre entreprise*" aria-label="nom_entreprise">
+                  <input class="field form-control me-2" type="search" placeholder="Adresse*" aria-label="adresse">
+                  <input class="field form-control me-2" type="search" placeholder="Complément d'adresse*" aria-label="complement_d_adresse">
+                <div class="code_ville">
+                  <input class="field_code form-control me-2" type="search" placeholder="Code postal*" aria-label="code_postal">
+                  <input class="field_ville form-control me-2" type="search" placeholder="Ville*" aria-label="ville">
+                </div>
+                  <input class="field form-control me-2" type="search" placeholder="Téléphone*" aria-label="tel">
+              </div>
+              <div>
+                <p class="obli">*Obligatoire</p>
+              </div>
+              <p class="sous_titre_inscription">Choississez le type d'établissement</p>
+              <div>
+                <div class="btn-group_inscription" role="group" aria-label="Basic checkbox toggle button group">
+                  <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                  <label class="bouton restaurant" for="btncheck1"><img src="../images/filtre_restaurant.svg" alt="restautant"></label>
+                
+                  <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                  <label class="bouton epicerie" for="btncheck2"><img src="../images/filtre_epicerie.svg" alt="epicerie"></label>
+                
+                  <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                  <label class="bouton bar" for="btncheck3"><img src="../images/filtre_bar.svg" alt="bar"></label>
+                </div>
+                <p class="sous_titre_inscription">Ajoutez une photo de votre établissement (1 minimum)</p>
+                <div class="group_photos">
+                <div class="photo">
+                  <div class="photo_cercle">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+                <div class="photo2">
+                  <div class="photo_cercle2">
+                    <p class="photo_cercle_typo">
+                      +
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="description">
+                  <p>description</p>
+              </div>
+                <div>
+                <button type="submit" class="bouton_bleu_inscription">Valider</button>
+                </div>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <!-- Vos spécialités -->
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck3">
+          <label class="tab-label" for="chck3">Vos spécialités (uniquement restaurant)</label>
+          <div class="tab-content">
+            <p class="sous_titre_inscription">Présentez ici vos spécialités (1 minimum)</p>
+            <div class="d-flex specialites">
+              <div class="photo">
+                <div class="photo_cercle">
+                  <p class="photo_cercle_typo">+</p>
+                </div>
+              </div>
+              <div class="description_choix">
+                <p>description</p>
+              </div>
+              <div class="prix_choix">
+                <p>prix</p>
+              </div>
+            </div>
+            <div class="d-flex specialites">
+              <div class="photo">
+                <div class="photo_cercle">
+                  <p class="photo_cercle_typo">+</p>
+                </div>
+              </div>
+              <div class="description_choix">
+                <p>description</p>
+              </div>
+              <div class="prix_choix">
+                <p>prix</p>
+              </div>
+            </div>
+            <div class="d-flex specialites">
+              <div class="photo">
+                <div class="photo_cercle">
+                  <p class="photo_cercle_typo">+</p>
+                </div>
+              </div>
+              <div class="description_choix">
+                <p>description</p>
+              </div>
+              <div class="prix_choix">
+                <p>prix</p>
+              </div>
+            </div>
+            <div class="d-flex specialites">
+              <div class="photo">
+                <div class="photo_cercle">
+                  <p class="photo_cercle_typo">+</p>
+                </div>
+              </div>
+              <div class="description_choix2">
+                <p>description</p>
+              </div>
+              <div class="prix_choix2">
+                <p>prix</p>
+              </div>
+              </div>
+              <div class="ajout_speci">
+                <a href="#">rajouter une spécialité</a>
+              </div>
+              <div>
+                <button type="submit" class="bouton_bleu_inscription">Valider</button>
+              </div>
+          </div>
+        </div>
+
+        <!-- Vos choix -->
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck4">
+          <label class="tab-label" for="chck4">Vos choix</label>
+          <div class="tab-content">
+            <p class="sous_titre_inscription">Dîtes-nous en un peu plus sur ce que vous proposez</p>
+            <div class="btn-group_inscription_choix" role="group" aria-label="Basic checkbox toggle button group">
+              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+              <label class="bouton veggie" for="btncheck4"><img src="../images/veggie.svg" alt="veggie"></label>
+            
+              <input type="checkbox" class="btn-check" id="btncheck5" autocomplete="off">
+              <label class="bouton vegan" for="btncheck5"><img src="../images/vegan.svg" alt="vegan"></label>
+            
+              <input type="checkbox" class="btn-check" id="btncheck6" autocomplete="off">
+              <label class="bouton vrac" for="btncheck6"><img src="../images/vrac.svg" alt="vrac"></label>
+
+              <input type="checkbox" class="btn-check" id="btncheck7" autocomplete="off">
+              <label class="bouton bio" for="btncheck7"><img src="../images/bio.svg" alt="bio"></label>
+
+              <input type="checkbox" class="btn-check" id="btncheck8" autocomplete="off">
+              <label class="bouton local" for="btncheck8"><img src="../images/Local.svg" alt="local"></label>
+            </div>
+            <div>
+              <button type="submit" class="bouton_bleu_inscription">Valider</button>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Votre gamme de prix et horaires -->
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck5">
+          <label class="tab-label" for="chck5">Votre gamme de prix et horaires</label>
+            <div class="tab-content">
+              <p class="sous_titre_inscription">Vos prix (€: faible - €€€€ : élevé)</p>
+              <div class="btn-group_inscription_gamme" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck9" autocomplete="off">
+                <label class="bouton un_euro" for="btncheck9"><img src="../images/un_euro.svg" alt="un euro"></label> 
+              
+                <input type="checkbox" class="btn-check" id="btncheck10" autocomplete="off">
+                <label class="bouton deux_euros" for="btncheck10"><img src="../images/deux_euros.svg" alt="deux euros"></label> 
+              
+                <input type="checkbox" class="btn-check" id="btncheck11" autocomplete="off">
+                <label class="bouton trois_euros" for="btncheck11"><img src="../images/trois_euros.svg" alt="trois euros"></label>
+
+                <input type="checkbox" class="btn-check" id="btncheck12" autocomplete="off">
+                <label class="bouton quatre_euros" for="btncheck12"><img src="../images/quatre_euros.svg" alt="quatre euros"></label>
+              </div>
+              <p class="sous_titre_inscription">Horaires</p>
+              <div class="d-flex horaire_jour">
+
+                  <div class="titre_jour">Matin</div>
+
+                  <div class="titre_jour">Après-midi / soir</div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Lun.
+                  </div>
+                    <div class="journee">
+                      10:00
+                    </div>
+                    <div class="journee">
+                      12:30
+                    </div>
+                    <div class="col_jour">
+                    </div>
+                    <div class="journee">
+                      13:00
+                    </div>
+                    <div class="journee">
+                      15:00
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Mar.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Mer.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Jeu.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Vend.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Sam.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div class="d-flex groupe_journee">
+                  <div class="jour">
+                    Dim.
+                  </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                    <div class="col_jour">
+  
+                    </div>
+                    <div class="journee">
+                     
+                    </div>
+                    <div class="journee">
+                      
+                    </div>
+                </div>
+                <div>
+                  <button type="submit" class="bouton_bleu_inscription">Valider</button>
+                </div>
+              </div>
+        </div>
+      </div>
 
 
+        <!-- Votre présence sur Internet -->
+        <div class="tab">
+          <input type="checkbox" class="input-hidden" id="chck6">
+          <label class="tab-label" for="chck6">Votre présence sur Internet</label>
+          <div class="tab-content">
+            <form action="reseaux_sociaux" method="post">
+              <div>
+                <div class="titre_site_internet_inscription">site internet</div>
+                  <input class="field form-control me-2" type="search" placeholder="https://votresite.com" aria-label="site">
+                <div class="titre_reseaux_sociaux_inscription">réseaux sociaux</div>
+                  <div class="d-flex">
+                    <img class="icon_rs" src="../images/icon_facebook.svg" alt="icone facebook">
+                    <input class="field form-control me-2" type="search" placeholder="https://facebook.com" aria-label="facebook">
+                  </div>
+                  <div class="d-flex">
+                    <img class="icon_rs" src="../images/icon_twitter.svg" alt="icone twitter">
+                    <input class="field form-control me-2" type="search" placeholder="https://twitter.com" aria-label="twitter">
+                  </div>
+                  <div class="d-flex">
+                    <img class="icon_rs" src="../images/icon_instagram.svg" alt="icone instagram">
+                    <input class="field form-control me-2" type="search" placeholder="https://instagram.com" aria-label="instagram">
+                  </div>
+              </div>
+              <div>
+                <button type="submit" class="bouton_bleu_inscription">Enregistrer</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  </div>   
+            
+    
+</main>
+
+ 
+<footer>
+    <a href="#">Besoin d'aide ?</a>
+    <a href="#">Voir nos CGU/CGV</a>
+    <span>LaBelle Bleue © 2021</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+{# 
       {{ form_start(registrationForm) }}
 
+        {{ form_row(registrationForm.name) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
@@ -19,17 +476,9 @@
         {{ form_row(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+    {{ form_end(registrationForm) }} #}
 
    
-    {{ form_start(est) }}
-
-        {{ form_row(Es.address) }}
-        {{ form_row(establishmentType.zipcode) }}
-        {{ form_row(establishmentType.city) }}
-        {{ form_row(establishmentType.phone) }} 
-
-    {{ form_end(establishmentType) }}
 
 
 

@@ -15,6 +15,7 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-bottom: 100px;
 }
 
 .liens-nav {
@@ -26,7 +27,7 @@ nav {
   -ms-flex-direction: row;
   flex-direction: row;
   text-align: right;
-  margin-top: 3em;
+  margin-top: 1em;
   text-transform: uppercase;
 }
 
@@ -38,11 +39,15 @@ nav a {
   color: white;
   text-decoration: none;
   height: 2em;
-  display: block;
+  margin-left: 58px;
 }
 
 nav a, .liens-nav a {
   color: #fff;
+}
+
+nav svg {
+  display: none;
 }
 
 nav a::after {
@@ -74,7 +79,7 @@ nav img {
 /******************************** LOGO ********************************/
 .logo img {
   width: auto;
-  margin: -25px 0;
+  margin-top: 33px;
 }
 
 .logo::after {

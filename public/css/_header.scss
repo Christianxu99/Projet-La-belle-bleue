@@ -16,32 +16,36 @@ header {
 nav {
 	display: flex;
 	justify-content: center;
+	padding-bottom: 100px;
 }
 
 .liens-nav {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	text-align: right;
-	margin-top: 3em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    text-align: right;
+    margin-top: 1em;
     text-transform: uppercase;
 }
 
 #menu-checkbox, .menu-toggle, .menu-croix {
 	display: none;
 }
-nav a  {
-	color: $white;
-	text-decoration: none;
+nav a {
+    color: white;
+    text-decoration: none;
     height: 2em;
-    display: block;
+    margin-left: 58px;
 }
 nav a, .liens-nav a {
     color: #fff;
+}
+nav svg {
+    display: none;
 }
 nav a::after {
 	content: '';
@@ -72,8 +76,8 @@ nav img {
 /******************************** LOGO ********************************/
 
 .logo img {
-	width: auto;
-	margin: -25px 0;
+    width: auto;
+    margin-top: 33px;
 }
 
 .logo::after {

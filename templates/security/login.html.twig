@@ -10,9 +10,9 @@
 <nav class="log-nav">
 
 
-	            <span>
+	            
                     <a href="{{ path("Index") }}">Accueil</a>
-                </span>
+                
             {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
             {% if is_granted("ROLE_USER") %}
 
@@ -21,9 +21,9 @@
                  <a href="{{ path("app_logout") }}">Se déconnecter</a> 
             {% else %}
 
-                <span>
+           
                     <a href="{{ path("RegistrationController") }}">Créer un compte</a>
-                </span>
+           
 
             {% endif %}
 

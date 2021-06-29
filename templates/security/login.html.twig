@@ -5,63 +5,6 @@
 {% block body %}
 
 
-<!DOCTYPE html>
-<html lang="fr">
-
-
-<body>
-  
-
-    <main>
-
-    <div class="card_inscriptionpart1 connexion_card">
-        <h1 class="_connexion_title">Connexion</h1>
-        <p class="connexion_sub">Connectez-vous pour partager avec la communauté !</p>
-
-        <form class="connexion-form">
-
-            <div class="champs-inscri">
-                <input id="customer-email" type="text" name="email" placeholder="Votre adresse e-mail" required>
-                <label for="customer-email"></label>
-                <input id="customer-pw" type="password" name="password" placeholder="Mot de passe" required>
-                <label id="customer-pw"></label>
-            </div>
-           
-
-            <div class="remember_me">
-                <input type="checkbox" class="remember_checkbox" id="remember-me-id" autocomplete="off">
-                <label for="remember-me-id">Se souvenir de moi</label>
-
-                <a href="#" class="connexion_pwoublie">Mot de passe oublié?</a>
-            
-               </div>
-
-            <button type="submit" class="bouton_bleu bouton_co">SE CONNECTER</button>
-
-            <div class="alternate_connexion">
-                <p class="ou_1">OU</p>
-                <p>S'inscrire avec</p>
-
-            </div>
-        </form>
-
-          <div class="inscription_1_rs connexion_rs"> 
-            <a href="#" ><img src="../images/inscription_facebook.png"></a>
-            <a href="#"><img class="inscription_1_google connexion_google" src="../images/inscription_google.png"></a>
-            </div>
-
-            <a href="#" class="connexion_pwoublie">Créer un compte</a>
-        
-    </div>
-  
-</main>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
-</html>
-
 
 
 <nav class="log-nav">
@@ -104,11 +47,21 @@
     {% endif %}
 
     <h1 class="h3 mb-3 font-weight-normal"> Connexion </h1>
+    <p class="connexion_sub">Connectez-vous pour partager avec la communauté !</p>
+
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
 
     <label for="inputPassword">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+     <div class="remember_me">
+        <input type="checkbox" class="remember_checkbox" id="remember-me-id" autocomplete="off">
+        <label for="remember-me-id">Se souvenir de moi</label>
+
+        <a href="#" class="connexion_pwoublie">Mot de passe oublié?</a>
+            
+    </div>
 
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
@@ -125,12 +78,27 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+    <button class="bouton_bleu bouton_co" type="submit">
         SE CONNECTER
     </button>
+
+
+
+            <div class="alternate_connexion">
+                <p class="ou_1">OU</p>
+                <p>S'inscrire avec</p>
+
+            </div>
+
+          
+          <div class="inscription_1_rs connexion_rs"> 
+            <a href="#" ><img src="../images/inscription_facebook.png"></a>
+            <a href="#"><img class="inscription_1_google connexion_google" src="../images/inscription_google.png"></a>
+            </div>
+
+            
+            <a href="{{ path("RegistrationController") }}">Créer un compte</a>
 </form>
-
-
 
 
 

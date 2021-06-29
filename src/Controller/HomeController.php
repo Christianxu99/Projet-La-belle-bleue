@@ -15,8 +15,8 @@ class HomeController extends AbstractController
     // requete spéciale pour récupérer les 3 
 
 
-   /**
-     * @Route("/{reactRouting}", name="home", defaults={"reactRouting": null})
+  /**
+     * @Route("/home", name="home")
      */
     public function index(EstablishmentRepository $establishmentRepository): Response
     {

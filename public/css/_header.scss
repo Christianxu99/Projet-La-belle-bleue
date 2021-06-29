@@ -47,7 +47,7 @@ nav a, .liens-nav a {
 nav a::after {
 	content: '';
 	display: block;
-	width: 100%;
+	width: 2px;
 	height: 2px;
 	background: white;
 	-webkit-transition: .5s;

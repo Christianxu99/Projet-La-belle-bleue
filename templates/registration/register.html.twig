@@ -8,14 +8,14 @@
     {% endfor %}
 
 
-    <h1> *** INSCRIPTION FORMULAIRE *** </h1>
+    <h1> INSCRIPTION </h1>
+    <div>
+        <h3 class="inscription_patt_1_secondtitle">Vous êtes : </h3>
+    </div>
+
 
     	<nav class="log-nav">
 
-
-	            <span>
-                    <a href="{{ path("Index") }}">Accueil</a>
-                </span>
             {#    ci-dessous, on affiche un contenu différent suivant les droits de l'utilisateur #}
             {% if is_granted("ROLE_USER") %}
     {#            1/ si l'utilisateur est connecté et a bien rentré sont login + mot de passe, #}
@@ -29,77 +29,20 @@
     {#            Sinon, l'utilisateur n'est pas connecté, et on affiche un lien vers le formulaire de login #}
     {#            et un autre vers la page de création de compte #}
                 <span>
+                    <button class="bouton_bleu bouton_co">
                     <a href="{{ path("RegistrationPart") }}">Consommateur engagé</a>
+                    </button>
                 </span>
                 <span>
+                    <button class="bouton_bleu bouton_co">
                     <a href="{{ path("RegistrationPro") }}">Professionnel engagé</a>
+                    </button>
                 </span>
             {% endif %}
 
     <hr>
     
-{#     
 
-    <h3> /// Prévoir du JS avec add event listenner /// Redirection vers les particuliers </h3>
-
-    <p> 1 page TWIG ? avec le formulaire (pseudo / adresse / confirmation email / mot de passe / confirmation mot de passe) </p>
-
-    <p> - sélection veggie vegan etc </p>
-    <p> - bouton s'inscrire </p>
-
-
-   <p> - Bouton Facebook Connect </p>
-    <ul>
-        <li> <a href="https://www.youdemus.fr/2019/08/22/comment-integrer-le-facebook-login-sur-son-site-internet-wordpress/"> youdemus </a></li>
-        <li> <a href="https://www.commentcamarche.net/faq/30926-integrer-facebook-connect-sur-son-site"> comment ca marche </a> </li>
-        <li> <a href="https://www.k6agency.com/fr/blog/facebook-connect/"> k6 agency </a> </li>
-    </ul>
-
-
-    <p> - Bouton Google Connect </p>
-    <ul>
-
-        <li> <a href="https://support.google.com/accounts/answer/112802?co=GENIE.Platform%3DAndroid&hl=fr"> Google </li>
-        <li> <a href="https://www.tutos.eu/3654"> Tuto </a> </li> 
-
-    </ul>
-
-    <p> - Avez-vous déjà un compte </p>
-
-     
-   
-
-    <h3> /// Prévoir du JS avec add event listenner /// Redirection vers les professionnels  </h3>
-
-    <p> - 1 page TWIG ? avec le formulaire (pseudo / adresse / confirmation email / mot de passe / confirmation mot de passe) </p>
-    <p> - bouton s'inscrire </p>
-
-
-    <p> - Avez-vous déjà un compte </p>
-
-    <p>   Page merci   </p>
-
-    <br>
-    <hr>
-    <br>
-
-    <p>  prévoir JS pour l'animation des 4 étapes de l'inscription </p>
-
-    <ul>
-        <li> Votre entreprise = formulaire avec nom / adresse / numero / email / site web / </li>
-        <li> Votre établissement = form avec type / photo / description
-        Vos spécialités = form avec specialty (photo /
-         description /)
-        vos choix = form avec product
-        vos horaires</li>
-        <li> Votre présence en ligne </li>
-        <li> Félicitations </li>
-    </ul>
-
-
-    <br>
-    <hr>
-    <br> #}
 
 
 

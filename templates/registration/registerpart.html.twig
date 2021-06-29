@@ -3,7 +3,6 @@
 {% block title %}Registerpart{% endblock %}
 
 {% block body %}
- <h3> FORMULAIRE  part</h3>
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
@@ -19,40 +18,25 @@
 
 
   
-    <h1>VOS IDENTIFIANTS</h1>
-    <form>
-
-    <div class="champs-inscri">
-
-      
-        <div>
-            <input id="customer-name" type="text" name="name" placeholder="Nom ou Pseudo"required>
-        </div>
-
-         <div>
-          <input id="customer-email" type="text" name="email" placeholder="Adresse e-mail" required>
-        </div>
+    <h1> INSCRIPTION </h1>
+    <h1> VOS IDENTIFIANTS </h1>
 
 
-         <div>
-            <input id="customer-email-confirm" type="text" name="email-confirm" placeholder="Confirmez votre e-mail"required>
-        </div>
+      {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name) }}
+        {{ form_row(registrationForm.email) }}
 
-         <div>
-            <input id="customer-pw" type="password" name="password" placeholder="Mot de passe" required>
-        </div>
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
 
-
-         <div>
-            <input id="customer-pw-confirm" type="password" name="password" placeholder="Confirmez votre mot de passe" required>
-        </div>
-      
-    </div>
-      
-  
-    <h1 class="inscription_patt_1_secondtitle">VOS CENTRES D'INTÉRÊTS</h1>
+        <button type="submit" class="bouton_bleu bouton_co">Register</button>
+    {{ form_end(registrationForm) }}  
     
-    <div class=" filtres_produits">
+      <h1 class="inscription_patt_1_secondtitle">VOS CENTRES D'INTÉRÊTS</h1>
+    
+    <div class="filtres_produits">
   
   <div class="btn-group inscription_part_1" role="group" aria-label="Basic checkbox toggle button group">
       <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
@@ -73,16 +57,6 @@
     </div>
   </div>
 
- <div class="CGU_inscriptionpart1">
-  <input type="checkbox" class="cgu_checkbox_inscriptionpart1" id="accept_cgu" autocomplete="off">
-  <label for="cgu">J'ai lu et j'accepte les conditions générales</label>
- </div>
- 
-  
-
-  <button type="submit" class="bouton_bleu">S'INSCRIRE</button>
-
-</form>
  
     
 </main>
@@ -96,19 +70,12 @@
 </html>
 
 
-{# 
 
-      {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.name) }}
-        {{ form_row(registrationForm.email) }}
 
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }} #}
+    
+
+
 
 
 

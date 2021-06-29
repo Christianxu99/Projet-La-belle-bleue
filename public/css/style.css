@@ -8,18 +8,6 @@ header {
 }
 
 /******************************** Barre de navigation ********************************/
-
-.navreact{
-
-  margin-right: 50rem!important;
-
-}
-
-.conteneurReact{
-
-  margin-bottom: 40px;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;

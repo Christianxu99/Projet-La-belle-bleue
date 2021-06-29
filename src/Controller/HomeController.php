@@ -15,12 +15,12 @@ class HomeController extends AbstractController
     // requete spéciale pour récupérer les 3 
 
 
-   /**
-     * @Route("/{reactRouting}", name="home", defaults={"reactRouting": null})
+    /**
+     * @Route("/home", name="home")
      */
     public function index(EstablishmentRepository $establishmentRepository): Response
     {
-        $establishment = $establishmentRepository->findAll();
+        $establihment = $establishmentRepository->findAll();
 
         $bestSpots = [
             [
@@ -48,7 +48,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'bestSpots' => $bestSpots,
-            'bestSpots' => $establishment
+            'bestSpots' => $establihment
         ]);
     }
 }

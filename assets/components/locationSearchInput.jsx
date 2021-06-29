@@ -32,8 +32,8 @@ export class LocationSearchInput extends React.Component {
           <div>
             <input
               {...getInputProps({
-                placeholder: 'Search Places ...',
-                className: 'location-search-input',
+                placeholder: 'Votre adresse',
+                className: 'location-search-input adresse form-control navreact ',
               })}
             />
             <div className="autocomplete-dropdown-container">

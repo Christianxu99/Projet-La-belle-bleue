@@ -8,18 +8,6 @@ header {
 }
 
 /******************************** Barre de navigation ********************************/
-
-.navreact{
-
-  margin-right: 50rem!important;
-
-}
-
-.conteneurReact{
-
-  margin-bottom: 40px;
-}
-
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,7 +36,6 @@ nav {
 
 nav a {
   color: white;
-  padding: 0 2em;
   text-decoration: none;
   height: 2em;
   display: block;
@@ -705,6 +692,14 @@ h3 {
 }
 
 /******************************** RECHERCHE ********************************/
+.navreact {
+  margin-right: 50rem !important;
+}
+
+.conteneurReact {
+  margin-bottom: 40px;
+}
+
 .adresse {
   border-radius: 30px;
   padding: 7px 2em;

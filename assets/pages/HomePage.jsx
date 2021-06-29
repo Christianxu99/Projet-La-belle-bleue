@@ -25,16 +25,20 @@ export const HomePage = () => {
         <div className="container fond-home">
         <h1>Localisez les bonnes adresses de l’alimentation bio, veg’ et locale autour de vous !</h1>
               
-        <div className="container d-flex justify-content-between">
+        <div className="container d-flex justify-content-between conteneurReact">
 
-        <div className="container d-flex justify-content-between" >
-             <LocationSearchInput setUserPos={setUserPos} setZoom={setZoom} /> 
+        <div className="container d-flex justify-content-between " >
+             <LocationSearchInput setUserPos={setUserPos} setZoom={setZoom} />
+             
+              
         </div>
 
             <button type="button" className="btn filtrer"> <img src="images/icon_filtrer.svg" alt="filtrer"/> Filtrer</button>
 
         </div>
 
+    
+    
 
        <div className="container home">
 

@@ -35,15 +35,10 @@ class EstablishmentController extends AbstractController
               $tabResult[] = array('lat' => $row->getLatitude(), 'lng' => $row->getLongitude(), 'name'=>$row->getName());
           }
 
- /*  'link' => '/etblissement/1' */
-
-
-
           return new JsonResponse($tabResult);
       }
 
 
-   
 
     
     /**

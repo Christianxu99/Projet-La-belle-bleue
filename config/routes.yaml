@@ -1,7 +1,7 @@
 
-AboutController:
-  path: /connexion
-  controller: App\Controller\AboutController::connexion
+About:
+  path: /about
+  controller: App\Controller\AboutController::about
 
 CommentController:
   path: /comment

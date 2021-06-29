@@ -33,15 +33,15 @@
                         </svg> Home
                     </a>
 
-                    <a href="{{ path("Index") }}">
+                    <a href="{{ path("About") }}">
                         <svg width="100" height="50">
                             <img src="../images/ri_earth-line.svg" alt="planete"/>
-                        </svg> Notre Blog
+                        </svg> A propos
                     </a>
 
-                    <a href="#" class="logo"><img src="images/logo.png" alt="logo"/></a> 
-
-
+                    <a href="{{ path("Index") }}" class="logo">
+                    <img src="images/logo.png" alt="logo"/>
+                    </a> 
 
 
                  {% if is_granted("ROLE_USER") %}
